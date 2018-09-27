@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GymClubApp</string>
+    <string name="input_user">Type in your username</string>
+    <string name="input_password">Type in your password</string>
+</resources>
