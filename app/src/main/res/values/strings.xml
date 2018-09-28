@@ -2,4 +2,8 @@
     <string name="app_name">GymClubApp</string>
     <string name="input_user">Type in your username</string>
     <string name="input_password">Type in your password</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
