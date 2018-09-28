@@ -1,4 +1,4 @@
-package com.example.gymclubapp;
+package com.example.gymclubapp.controller;
 
 import android.app.Activity;
 

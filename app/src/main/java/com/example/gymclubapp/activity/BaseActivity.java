@@ -1,4 +1,4 @@
-package com.example.gymclubapp;
+package com.example.gymclubapp.activity;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
+import com.example.gymclubapp.R;
 
 public class BaseActivity extends AppCompatActivity {
 
-    //是否使用特殊的标题栏背景颜色，android5.0以上可以设置状态栏背景色，如果不使用则使用透明色值
+    //是否使用特殊的标题栏背景颜色，设置状态栏背景色，如果不使用则使用透明色值
     protected boolean useThemestatusBarColor = false;
-    //是否使用状态栏文字和图标为暗色，如果状态栏采用了白色系，则需要使状态栏和图标为暗色，android6.0以上可以设置
+    //是否使用状态栏文字和图标为暗色，如果状态栏采用了白色系，则需要使状态栏和图标为暗色
     protected boolean useStatusBarColor = true;
 
     @Override

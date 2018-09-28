@@ -1,10 +1,12 @@
-package com.example.gymclubapp;
+package com.example.gymclubapp.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import com.example.gymclubapp.R;
+import com.example.gymclubapp.controller.ActivityController;
 
 public class SignInActivity extends BaseActivity {
 
@@ -20,6 +22,12 @@ public class SignInActivity extends BaseActivity {
         setButtonListener(button_sign_up, this, MainActivity.class);
     }
 
+    /**
+     * 设置listener
+     * @param button
+     * @param context
+     * @param targetClass
+     */
     private void setButtonListener(Button button, final Context context, final Class targetClass) {
 
         button.setOnClickListener(new View.OnClickListener() {
