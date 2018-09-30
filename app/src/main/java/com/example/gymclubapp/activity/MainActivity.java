@@ -5,11 +5,12 @@ import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
 import android.widget.TextView;
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.controller.ActivityController;
 
 public class MainActivity extends BaseActivity {
 
     private TextView mTextMessage;
+    private int icons[] = {R.drawable.ic_training, R.drawable.ic_course, R.drawable.ic_mine,
+                            R.drawable.ic_training_fill, R.drawable.ic_course_fill, R.drawable.ic_mine_fill};
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -17,26 +18,33 @@ public class MainActivity extends BaseActivity {
         @Override
         public boolean onNavigationItemSelected(MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                case R.id.navigation_training:
+                    mTextMessage.setText(R.string.title_training);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_course:
+                    mTextMessage.setText(R.string.title_course);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_user:
+                    mTextMessage.setText(R.string.title_user);
                     return true;
             }
             return false;
         }
+
     };
+
+
+
+    private void setItemIcon(MenuItem item, int icon_1, int icon_2, int icon_3) {
+        item.setIcon(icons[icon_1]);
+        item.setIcon(icons[icon_2]);
+        item.setIcon(icons[icon_3]);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ActivityController.finishActivity(ActivityController.activity_signIn);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

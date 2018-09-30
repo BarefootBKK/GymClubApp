@@ -34,8 +34,8 @@ public class SignInActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, targetClass);
-                ActivityController.activity_signIn = SignInActivity.this;
                 startActivity(intent);
+                ActivityController.finishActivity(SignInActivity.this);
             }
         });
     }

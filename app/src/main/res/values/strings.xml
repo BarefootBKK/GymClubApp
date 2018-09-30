@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">GymClubApp</string>
-    <string name="input_user">Type in your username</string>
-    <string name="input_password">Type in your password</string>
+    <string name="input_user">请输入账号</string>
+    <string name="input_password">请输入密码</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_training">训练</string>
+    <string name="title_course">课程</string>
+    <string name="title_user">我的</string>
 </resources>
