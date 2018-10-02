@@ -15,28 +15,44 @@ import com.example.gymclubapp.activity.SignInActivity;
 
 public class ActivityController {
 
-    private static boolean isFirst = true;
+    private static boolean isLogin = true;
 
+    /**
+     * 停止一个Activity
+     * @param activity
+     */
     public static void finishActivity(Activity activity) {
         if (!activity.isFinishing()) {
             activity.finish();
         }
     }
 
-    public static boolean getIsFirst() {
-        return isFirst;
+    /**
+     * 获取应用状态
+     * @return
+     */
+    public static boolean getIsLogin() {
+        return isLogin;
     }
 
-    public static void setIsFirst(boolean isFirst) {
-        ActivityController.isFirst = isFirst;
+    /**
+     * 设置应用状态
+     * @param isLogin
+     */
+    public static void setIsLogin(boolean isLogin) {
+        ActivityController.isLogin = isLogin;
     }
 
+    /**
+     * 获取一个新的ActivityController对象
+     * @return ActivityController
+     */
     public static ActivityController getObject() {
         return new ActivityController();
     }
 
     /**
-     * 沉浸式状态栏
+     * 设置为沉浸式状态栏
      */
     public void setStatusBar(Activity activity) {
 
@@ -81,7 +97,7 @@ public class ActivityController {
             public void onClick(View v) {
                 // 判断是否进入主页
                 if (targetClass.equals(MainActivity.class)) {
-                    ActivityController.setIsFirst(false);
+                    ActivityController.setIsLogin(false);
                 }
                 Intent intent = new Intent(activity, targetClass);
                 activity.startActivity(intent);

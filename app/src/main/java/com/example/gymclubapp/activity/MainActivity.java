@@ -13,9 +13,6 @@ import com.example.gymclubapp.controller.ActivityController;
 
 public class MainActivity extends BaseActivity {
 
-    private final static String TAG = "MainActivity";
-    private boolean isFirst = true;
-
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -50,10 +47,11 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (ActivityController.getIsFirst()) {
+        if (ActivityController.getIsLogin()) {
             // 若是第一次打开应用，进入登录界面
             startActivity(new Intent(this, SignInActivity.class));
             ActivityController.finishActivity(this);
+
         } else {
             setContentView(R.layout.activity_main);
             setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
