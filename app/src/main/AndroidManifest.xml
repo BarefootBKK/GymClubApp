@@ -6,12 +6,13 @@
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@mipmap/ic_launcher"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
 
         <activity
-            android:name=".activity.MainActivity">
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -19,11 +20,27 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.SignInActivity" android:launchMode="singleTask">
+        <activity
+            android:name=".activity.SignInActivity"
+            android:launchMode="singleTask">
         </activity>
 
         <activity
-                android:name=".activity.SignUpActivity">
+                android:name=".activity.SignUpActivity"
+                android:parentActivityName=".activity.SignInActivity">
+            <!--如果要支持android4.0以下的-->
+            <meta-data
+                android:name = "android.support.PARENT_ACTIVITY"
+                android:value = ".activity.SignInActivity"/>
+        </activity>
+
+        <activity
+            android:name=".activity.SearchActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <!--如果要支持android4.0以下的-->
+            <meta-data
+                android:name = "android.support.PARENT_ACTIVITY"
+                android:value = ".activity.MainActivity"/>
         </activity>
 
     </application>

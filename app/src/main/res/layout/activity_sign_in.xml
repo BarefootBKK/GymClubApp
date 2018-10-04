@@ -9,89 +9,116 @@
         android:background="#ffffff"
         tools:context=".activity.SignInActivity">
 
-    <ImageView
-            android:layout_width="124dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/ic_fitness"
-            android:id="@+id/imageView_loginIcon"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="40dp"/>
-    <EditText
-            android:id="@+id/edit_text_user"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/input_user"
-            android:background="@null"
-            android:textSize="16sp"
-            android:singleLine="true"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView_user"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_user"/>
-    <TextView
-            android:text="账号"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_user"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="55dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView_loginIcon"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"/>
-    <EditText
-            android:id="@+id/edit_text_password"
-            android:inputType="textPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/input_password"
-            android:background="@null"
-            android:textSize="16sp"
-            android:singleLine="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintEnd_toEndOf="@+id/edit_text_user"
-            app:layout_constraintStart_toStartOf="@+id/edit_text_user"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_password"/>
-    <TextView
-            android:text="密码"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_password"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView_user"
-            app:layout_constraintStart_toStartOf="@+id/textView_user"/>
-
-    <Button
-        android:id="@+id/button_sign_in"
-        style="@style/Widget.AppCompat.Button.Colored"
+    <ScrollView
+        android:id="@+id/scrollViewSignIn"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="登 录"
-        android:textSize="19dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/edit_text_password"
-        app:layout_constraintStart_toStartOf="@+id/textView_password"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
-    <Button
-            android:text="注 册"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_sign_up"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:textSize="19dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/button_sign_in"
-            app:layout_constraintEnd_toEndOf="@+id/button_sign_in"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/button_sign_in"/>
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/innerConstraintLayoutSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/imageView_loginIcon"
+                android:layout_width="124dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_fitness" />
+
+            <EditText
+                android:id="@+id/edit_text_user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="20dp"
+                android:background="@null"
+                android:hint="@string/input_user"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_user"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textView_user" />
+
+            <TextView
+                android:id="@+id/textView_user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="55dp"
+                android:text="账号"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView_loginIcon" />
+
+            <EditText
+                android:id="@+id/edit_text_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="@string/input_password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_password"
+                app:layout_constraintEnd_toEndOf="@+id/edit_text_user"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/edit_text_user" />
+
+            <TextView
+                android:id="@+id/textView_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="密码"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
+                app:layout_constraintStart_toStartOf="@+id/textView_user"
+                app:layout_constraintTop_toBottomOf="@+id/textView_user" />
+
+            <Button
+                android:id="@+id/button_sign_in"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="登 录"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/edit_text_password"
+                app:layout_constraintStart_toStartOf="@+id/textView_password"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
+
+            <Button
+                android:id="@+id/button_sign_up"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="注 册"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/button_sign_in"
+                app:layout_constraintStart_toStartOf="@+id/button_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/button_sign_in" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

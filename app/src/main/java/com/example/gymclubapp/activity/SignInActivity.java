@@ -14,12 +14,11 @@ public class SignInActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        ActivityController.getObject().setStatusBar(this);
 
         Button btn_sign_in = (Button) findViewById(R.id.button_sign_in);
         Button btn_sign_up = (Button) findViewById(R.id.button_sign_up);
 
-        ActivityController.setButtonListener(btn_sign_in, this, MainActivity.class, true);
-        ActivityController.setButtonListener(btn_sign_up, this, SignUpActivity.class, false);
+        ActivityFunctionUtil.setActivityButtonListener(btn_sign_in, this, MainActivity.class, true);
+        ActivityFunctionUtil.setActivityButtonListener(btn_sign_up, this, SignUpActivity.class, false);
     }
 }

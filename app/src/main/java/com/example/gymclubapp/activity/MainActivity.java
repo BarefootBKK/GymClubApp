@@ -2,64 +2,58 @@ package com.example.gymclubapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TextView;
+import android.support.v4.app.Fragment;
+import android.view.WindowManager;
 import com.example.gymclubapp.R;
+import com.example.gymclubapp.Util.ActivityFunctionUtil;
 import com.example.gymclubapp.controller.ActivityController;
+import com.example.gymclubapp.controller.MyFragmentController;
+
+import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
-    private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_training:
-                    mTextMessage.setText(R.string.title_training);
-                    return true;
-                case R.id.navigation_course:
-                    mTextMessage.setText(R.string.title_course);
-                    return true;
-                case R.id.navigation_user:
-                    mTextMessage.setText(R.string.title_user);
-                    return true;
-            }
-            return false;
-        }
-
-    };
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar, menu);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        return true;
-    }
+    private int currentFragment = -1;
+    Fragment[] fragments = new Fragment[2];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (ActivityController.getIsLogin()) {
+        if (ActivityFunctionUtil.getIsLogin()) {
             // 若是第一次打开应用，进入登录界面
             startActivity(new Intent(this, SignInActivity.class));
             ActivityController.finishActivity(this);
 
         } else {
             setContentView(R.layout.activity_main);
-            setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-
-            mTextMessage = (TextView) findViewById(R.id.toolbar_title);
-            BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-            navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+            this.initFragment();
         }
     }
 
+    /**
+     * 初始化fragment
+     */
+    private void initFragment() {
+        MyFragmentController.addFragment(getSupportFragmentManager().findFragmentById(R.id.trainingFragment));
+        MyFragmentController.addFragment(getSupportFragmentManager().findFragmentById(R.id.courseFragment));
+        showFragment(0);
+    }
+
+    /**
+     * 显示指定fragment
+     * @param fragmentIndex
+     */
+    public void showFragment(int fragmentIndex) {
+
+        if (currentFragment != fragmentIndex) {
+            List<Fragment> fragmentList = MyFragmentController.getFragmentList();
+            // 隐藏前一fragment
+            for (Fragment fragment : fragmentList) {
+                getSupportFragmentManager().beginTransaction().hide(fragment).commit();
+            }
+            getSupportFragmentManager().beginTransaction().show(fragmentList.get(fragmentIndex)).commit();
+            currentFragment = fragmentIndex;
+        }
+    }
 }
