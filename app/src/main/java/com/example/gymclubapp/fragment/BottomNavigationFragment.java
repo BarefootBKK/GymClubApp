@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.view.*;
-import android.support.v7.widget.Toolbar;
 import com.example.gymclubapp.R;
 import com.example.gymclubapp.activity.MainActivity;
 
@@ -36,12 +35,13 @@ public class BottomNavigationFragment extends Fragment {
         public boolean onNavigationItemSelected(MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_training:
-                    mainActivity.showFragment(0);
+                    mainActivity.showFragment(0, false);
                     return true;
                 case R.id.navigation_course:
-                    mainActivity.showFragment(1);
+                    mainActivity.showFragment(1, false);
                     return true;
                 case R.id.navigation_user:
+                    mainActivity.showFragment(2, false);
                     return true;
             }
             return false;

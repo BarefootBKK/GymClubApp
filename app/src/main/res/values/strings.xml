@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GymClubApp</string>
+    <string name="app_name">Gym Club</string>
     <string name="input_user">请输入账号</string>
     <string name="input_password">请输入密码</string>
     <string name="title_activity_main">MainActivity</string>

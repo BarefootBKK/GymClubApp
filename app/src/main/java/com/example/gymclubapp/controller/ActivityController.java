@@ -1,19 +1,6 @@
 package com.example.gymclubapp.controller;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.Toast;
-import com.example.gymclubapp.R;
-import com.example.gymclubapp.Util.ActivityFunctionUtil;
-import com.example.gymclubapp.activity.MainActivity;
-import com.example.gymclubapp.activity.SignInActivity;
 
 import java.util.ArrayList;
 import java.util.List;

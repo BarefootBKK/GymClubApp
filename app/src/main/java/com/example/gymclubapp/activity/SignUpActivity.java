@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.Util.ActivityFunctionUtil;
-import com.example.gymclubapp.controller.ActivityController;
 
 public class SignUpActivity extends BaseActivity{
 

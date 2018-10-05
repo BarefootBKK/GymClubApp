@@ -33,4 +33,11 @@ public class MyFragmentController {
     public static List<Fragment> getFragmentList() {
         return fragmentList;
     }
+
+    /**
+     * 清空List
+     */
+    public static void clearAllFragmentFromList() {
+        fragmentList.clear();
+    }
 }

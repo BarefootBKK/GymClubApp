@@ -1,13 +1,17 @@
 package com.example.gymclubapp.activity;
 
-import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import android.view.WindowManager;
 import com.example.gymclubapp.Util.ActivityFunctionUtil;
-import com.example.gymclubapp.controller.ActivityController;
+import com.example.gymclubapp.entity.FragmentAdapter;
+
+import java.util.List;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -17,7 +21,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityFunctionUtil.getInstance().setStatusBar(this);  // 设置为沉浸式状态栏
-        this.TAG = this.getLocalClassName();                   // 打印日志
+        this.TAG = "类-" + this.getLocalClassName();                   // 打印日志
     }
 
     @Override

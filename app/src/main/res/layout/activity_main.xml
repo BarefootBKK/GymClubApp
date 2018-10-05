@@ -39,4 +39,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationFragment"/>
 
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.gymclubapp.fragment.UserInfoFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationFragment"/>
+
 </android.support.constraint.ConstraintLayout>

@@ -16,7 +16,7 @@ import com.example.gymclubapp.controller.ActivityController;
 
 public class ActivityFunctionUtil {
 
-    private static boolean isLogin = true;  // 是否已登录
+    private static boolean isLogin = false;  // 是否已登录
 
     public static ActivityFunctionUtil getInstance() {
         return new ActivityFunctionUtil();
@@ -86,29 +86,15 @@ public class ActivityFunctionUtil {
     }
 
     /**
-     * 设置listener
-     * @param activity
-     * @param button
+     * 跳转至目标Class
      * @param targetClass
-     * @param isFinishCurrentActivity
+     * @param data
+     * @param resId
      */
-    public static void setActivityButtonListener(final Button button, final Activity activity,
-                                                 final Class targetClass, final boolean isFinishCurrentActivity) {
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 判断是否进入主页
-                if (targetClass.equals(MainActivity.class)) {
-                    ActivityFunctionUtil.setIsLogin(false);
-                }
-                Intent intent = new Intent(activity, targetClass);
-                activity.startActivity(intent);
-                // 是否结束当前活动
-                if (isFinishCurrentActivity) {
-                    ActivityController.finishActivity(activity);
-                }
-            }
-        });
+    public static void toStartActivity(Activity activity, Class targetClass, String data, int resId) {
+        Intent intent = new Intent(activity, targetClass);
+        intent.putExtra("extra_data", data);
+        intent.putExtra("extra_res", resId);
+        activity.startActivity(intent);
     }
 }

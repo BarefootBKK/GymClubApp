@@ -37,7 +37,7 @@
                 app:srcCompat="@drawable/ic_fitness" />
 
             <EditText
-                android:id="@+id/edit_text_user"
+                android:id="@+id/signInEditUser"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
@@ -49,13 +49,13 @@
                 android:inputType="text"
                 android:singleLine="true"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView_user"
+                app:layout_constraintBottom_toBottomOf="@+id/signInTextUser"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textView_user" />
+                app:layout_constraintStart_toEndOf="@+id/signInTextUser" />
 
             <TextView
-                android:id="@+id/textView_user"
+                android:id="@+id/signInTextUser"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView_loginIcon" />
 
             <EditText
-                android:id="@+id/edit_text_password"
+                android:id="@+id/signInEditPassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -76,23 +76,23 @@
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView_password"
-                app:layout_constraintEnd_toEndOf="@+id/edit_text_user"
+                app:layout_constraintBottom_toBottomOf="@+id/signInTextPassword"
+                app:layout_constraintEnd_toEndOf="@+id/signInEditUser"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/edit_text_user" />
+                app:layout_constraintStart_toStartOf="@+id/signInEditUser" />
 
             <TextView
-                android:id="@+id/textView_password"
+                android:id="@+id/signInTextPassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="密码"
                 android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
-                app:layout_constraintStart_toStartOf="@+id/textView_user"
-                app:layout_constraintTop_toBottomOf="@+id/textView_user" />
+                app:layout_constraintStart_toStartOf="@+id/signInTextUser"
+                app:layout_constraintTop_toBottomOf="@+id/signInTextUser" />
 
             <Button
-                android:id="@+id/button_sign_in"
+                android:id="@+id/signInButtonIn"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -100,12 +100,12 @@
                 android:text="登 录"
                 android:textSize="19dp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/edit_text_password"
-                app:layout_constraintStart_toStartOf="@+id/textView_password"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
+                app:layout_constraintEnd_toEndOf="@+id/signInEditPassword"
+                app:layout_constraintStart_toStartOf="@+id/signInTextPassword"
+                app:layout_constraintTop_toBottomOf="@+id/signInEditPassword" />
 
             <Button
-                android:id="@+id/button_sign_up"
+                android:id="@+id/signInButtonUp"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -113,9 +113,9 @@
                 android:text="注 册"
                 android:textSize="19dp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/button_sign_in"
-                app:layout_constraintStart_toStartOf="@+id/button_sign_in"
-                app:layout_constraintTop_toBottomOf="@+id/button_sign_in" />
+                app:layout_constraintEnd_toEndOf="@+id/signInButtonIn"
+                app:layout_constraintStart_toStartOf="@+id/signInButtonIn"
+                app:layout_constraintTop_toBottomOf="@+id/signInButtonIn" />
 
         </android.support.constraint.ConstraintLayout>
 

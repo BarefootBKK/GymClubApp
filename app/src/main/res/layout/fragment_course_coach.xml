@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:background="@drawable/yoga"
+                android:gravity="bottom"
+                />
+            <!-- 记得！修改字体和颜色！-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Yoga training"
+                android:textColor="#000000"
+                android:textSize="26sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/elizabeth" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="bottom"
+                        android:text="Coach: Elizabeth"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="Senior yoga coach,
+created a lot of training courses."
+                        android:textColor="#000000"
+                        android:textSize="13dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="bottom"
+                android:text="Course type:
+   Flexible training"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+
+                android:text="Principle:"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:gravity="bottom"
+                android:text="   Yoga posture is an ancient and easy-to-master technique to improve people's physical, psychological, emotional and spiritual abilities. It is a way to achieve the harmony and unity of body, mind and spirit."
+                android:textColor="#000000"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="bottom"
+                android:text="Timetable:"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="MON"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="TUE"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="WED"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="THU"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="FRI"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="SAT"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="SUN"
+                        android:textSize="30px"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="8:00"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="14:00"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="11:00"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="17:00"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="9:00"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="16:00"
+                        android:textSize="30px"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="10:00"
+                        android:textSize="30px"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
