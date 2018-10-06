@@ -7,18 +7,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.Util.ActivityFunctionUtil;
+import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.controller.ActivityController;
 import com.example.gymclubapp.controller.MyFragmentController;
 import com.example.gymclubapp.controller.TabViewPagerController;
-import com.example.gymclubapp.entity.FragmentAdapter;
 import com.example.gymclubapp.fragment.subFragment.CourseCoachSubFragment;
 import com.example.gymclubapp.fragment.subFragment.CourseItemSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingDietSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingFitnessSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingRunSubFragment;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
@@ -40,6 +38,11 @@ public class MainActivity extends BaseActivity {
             this.initFragment();
             this.initTabLayout();
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     /**

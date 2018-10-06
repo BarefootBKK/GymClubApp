@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.Util.ActivityFunctionUtil;
+import com.example.gymclubapp.controller.ActivityController;
+import com.example.gymclubapp.util.ActivityFunctionUtil;
 
 public class SignInActivity extends BaseActivity implements View.OnClickListener{
     private final static String TAG = "SignInActivity";
@@ -26,11 +27,11 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.signInButtonIn:
                 ActivityFunctionUtil.setIsLogin(true);
-                ActivityFunctionUtil.toStartActivity(this, MainActivity.class, null, -1);
-                this.finish();
+                ActivityFunctionUtil.toStartActivity(this, MainActivity.class, -1, "");
+                ActivityController.finishActivity(this);
                 break;
             case R.id.signInButtonUp:
-                ActivityFunctionUtil.toStartActivity(this, SignUpActivity.class, null, -1);
+                ActivityFunctionUtil.toStartActivity(this, SignUpActivity.class, -1, "");
                 break;
             default:
                 break;

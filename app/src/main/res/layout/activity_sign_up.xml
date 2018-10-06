@@ -101,6 +101,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                android:background="#44b1f5"
                 android:text="注册"
                 android:textSize="19dp"
                 android:textStyle="bold"

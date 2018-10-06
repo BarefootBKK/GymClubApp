@@ -1,4 +1,4 @@
-package com.example.gymclubapp.Util;
+package com.example.gymclubapp.util;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,11 +8,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.Toast;
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.activity.MainActivity;
-import com.example.gymclubapp.controller.ActivityController;
 
 public class ActivityFunctionUtil {
 
@@ -91,9 +88,10 @@ public class ActivityFunctionUtil {
      * @param data
      * @param resId
      */
-    public static void toStartActivity(Activity activity, Class targetClass, String data, int resId) {
+    public static void toStartActivity(Activity activity, Class targetClass, int resId, String... dataArray) {
+
         Intent intent = new Intent(activity, targetClass);
-        intent.putExtra("extra_data", data);
+        intent.putExtra("extra_data", dataArray);
         intent.putExtra("extra_res", resId);
         activity.startActivity(intent);
     }

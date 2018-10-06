@@ -17,17 +17,17 @@ public class TempActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp);
-        String data = getIntent().getStringExtra("extra_data");
+        String[] data = getIntent().getStringArrayExtra("extra_data");
         int resId = getIntent().getIntExtra("extra_res", -1);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarTemp);
         setSupportActionBar(toolbar);
-        ((TextView) findViewById(R.id.tempContent)).setText("这是从【" + data + "】传来的数据.");
+        ((TextView) findViewById(R.id.tempContent)).setText("这是从【" + data[0] + "】传来的数据.");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);      // 显示返回按钮
-            actionBar.setTitle(data);
+            actionBar.setTitle(data[0]);
         }
 
         if (resId >= 0) {

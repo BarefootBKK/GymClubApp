@@ -1,6 +1,8 @@
 package com.example.gymclubapp.fragment;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.view.*;
@@ -33,6 +35,7 @@ public class BottomNavigationFragment extends Fragment {
 
         @Override
         public boolean onNavigationItemSelected(MenuItem item) {
+
             switch (item.getItemId()) {
                 case R.id.navigation_training:
                     mainActivity.showFragment(0, false);
@@ -48,4 +51,5 @@ public class BottomNavigationFragment extends Fragment {
         }
 
     };
+
 }

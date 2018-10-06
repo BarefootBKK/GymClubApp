@@ -10,20 +10,26 @@
         android:id="@+id/searchToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#ff0000"
+        android:background="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/Theme.AppCompat.Light">
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Search for something"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
     </android.support.v7.widget.Toolbar>
+
+    <SearchView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="35dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="输入想要查找的课程或教练"
+        app:layout_constraintBottom_toBottomOf="@+id/searchToolbar"
+        app:layout_constraintEnd_toEndOf="@+id/searchToolbar"
+        app:layout_constraintStart_toStartOf="@+id/searchToolbar"
+        app:layout_constraintTop_toTopOf="@+id/searchToolbar" />
 
 </android.support.constraint.ConstraintLayout>

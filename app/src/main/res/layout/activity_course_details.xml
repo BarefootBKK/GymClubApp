@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonJoinCourse"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- 课程内容 -->
+            <TextView
+                android:id="@+id/courseContentCourseDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="6dp"
+                android:text="课程内容"
+                android:background="#f2f2ec"
+                android:textColor="#423e3e"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="@+id/courseDetail"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/courseDetail" />
+            <!-- 课程详情 -->
+            <TextView
+                android:id="@+id/courseDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="课程详情"
+                android:textColor="#383636"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2CourseDetail" />
+            <!-- 课程标题 -->
+            <TextView
+                android:id="@+id/headindCourseDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="课程标题"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#FF31302D"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/posterCourseDetails" />
+            <!-- 海报 -->
+            <ImageView
+                android:id="@+id/posterCourseDetails"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:alpha="1"
+                app:layout_constraintDimensionRatio="w,9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/abdominal_muscle" />
+            <!-- toolbar -->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbarCourseDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:popupTheme="@style/Theme.AppCompat.Light"
+                app:subtitleTextAppearance="@style/ToolbarTitleText"
+                app:titleTextColor="#20201f" />
+            <!-- 分割线1 -->
+            <View
+                android:id="@+id/view1CourseDetail"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dip"
+                android:layout_marginTop="16dp"
+                android:background="#aea0a0"
+                android:alpha="0.5"
+                app:layout_constraintTop_toBottomOf="@id/headindCourseDetails" />
+            <!-- 训练部位 -->
+            <TextView
+                android:id="@+id/positionCourseDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:text="训练部位"
+                android:textColor="#777575"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view1CourseDetail" />
+
+            <!-- 部位 -->
+            <TextView
+                android:id="@+id/bodyPositionCourseDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:text="手臂"
+                android:textColor="#000000"
+                app:layout_constraintLeft_toRightOf="@id/positionCourseDetails"
+                app:layout_constraintTop_toTopOf="@+id/positionCourseDetails" />
+            <!-- 分割线2 -->
+            <View
+                android:id="@+id/view2CourseDetail"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dip"
+                android:background="#aea0a0"
+                android:layout_marginTop="16dp"
+                android:alpha="0.5"
+                app:layout_constraintTop_toBottomOf="@id/positionCourseDetails" />
+            <!-- 分割线3 -->
+            <View
+                android:id="@+id/view3CourseDetail"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dip"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:background="#aea0a0"
+                app:layout_constraintTop_toBottomOf="@id/courseContentCourseDetails"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="24dp"
+                android:alpha="0.6"
+                android:text="(≧∇≦)/"
+                android:textColor="#706161"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/courseContentCourseDetails" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+    <!-- 开始训练按钮 -->
+    <Button
+        android:id="@+id/buttonJoinCourse"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#efe82d"
+        android:text="加入课程"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

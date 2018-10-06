@@ -3,17 +3,18 @@
 
     <item
             android:id="@+id/navigation_training"
-            android:icon="@drawable/ic_training_fill"
+            android:icon="@drawable/ic_training"
+            android:checked="true"
             android:title="@string/title_training"/>
 
     <item
             android:id="@+id/navigation_course"
-            android:icon="@drawable/ic_course_fill"
+            android:icon="@drawable/ic_course"
             android:title="@string/title_course"/>
 
     <item
             android:id="@+id/navigation_user"
-            android:icon="@drawable/ic_mine_fill"
+            android:icon="@drawable/ic_mine"
             android:title="@string/title_user"/>
 
 </menu>

@@ -57,7 +57,25 @@
                 android:value=".activity.MainActivity" />
         </activity>
 
-        <activity android:name=".activity.CourseDetailActivity">
+        <!-- CourseDetailActivity -->
+        <activity android:name=".activity.CourseDetailActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- 如果要支持android4.0以下的 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+
+        <!-- MoreCourseActivity -->
+        <activity android:name=".activity.MoreCourseActivity"/>
+
+        <!-- TrainingRecordActivity -->
+        <activity android:name=".activity.TrainingRecordActivity"
+            android:parentActivityName=".activity.MainActivity">
+        <!-- 如果要支持android4.0以下的 -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".activity.MainActivity" />
         </activity>
 
     </application>

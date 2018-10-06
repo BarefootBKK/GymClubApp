@@ -1,8 +1,6 @@
 package com.example.gymclubapp.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -14,7 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.Util.ActivityFunctionUtil;
+import com.example.gymclubapp.activity.MoreCourseActivity;
+import com.example.gymclubapp.activity.SignInActivity;
+import com.example.gymclubapp.activity.TrainingRecordActivity;
+import com.example.gymclubapp.controller.ActivityController;
+import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.activity.MainActivity;
 import com.example.gymclubapp.activity.SearchActivity;
 import com.example.gymclubapp.activity.TempActivity;
@@ -58,13 +60,20 @@ public class BaseFragment extends Fragment implements View.OnClickListener{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_search:
-                ActivityFunctionUtil.toStartActivity(mainActivity, SearchActivity.class, "search", R.drawable.ic_search);
+                ActivityFunctionUtil.toStartActivity(mainActivity, SearchActivity.class,
+                        R.drawable.ic_search, "search");
                 break;
             case R.id.item_record:
-                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class, "MyRecord", R.drawable.ic_my_records);
+                ActivityFunctionUtil.toStartActivity(mainActivity, TrainingRecordActivity.class,
+                        R.drawable.ic_my_records, "MyRecord");
                 break;
             case R.id.item_message:
-                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class, "Message", R.drawable.ic_msg);
+                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class,
+                        R.drawable.ic_msg, "Message");
+                break;
+            case R.id.item_more_course:
+                ActivityFunctionUtil.toStartActivity(mainActivity, MoreCourseActivity.class,
+                        R.drawable.ic_msg, "Message");
                 break;
             default:
                 break;
@@ -77,19 +86,28 @@ public class BaseFragment extends Fragment implements View.OnClickListener{
 
         switch (v.getId()) {
             case R.id.userCardViewTrainingData:
-                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class, "训练记录", R.drawable.ic_data);
+                ActivityFunctionUtil.toStartActivity(mainActivity, TrainingRecordActivity.class,
+                        R.drawable.ic_data, "训练记录");
                 break;
             case R.id.userCardViewCollection:
-                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class, "我的收藏", R.drawable.ic_my_collection);
+                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class,
+                        R.drawable.ic_my_collection, "我的收藏");
                 break;
             case R.id.userCardViewFeeling:
-                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class, "我的心得", R.drawable.ic_my_feeling);
+                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class,
+                        R.drawable.ic_my_feeling, "我的心得");
                 break;
             case R.id.userCardViewDynamic:
-                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class, "我的动态", R.drawable.ic_news);
+                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class,
+                        R.drawable.ic_news, "我的动态");
                 break;
             case R.id.userCircleImageView:
-                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class, "我的头像", R.drawable.fruit);
+                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class,
+                        R.drawable.fruit, "我的头像");
+                break;
+            case R.id.userLogout:
+                ActivityFunctionUtil.toStartActivity(mainActivity, SignInActivity.class,
+                        -1, "");
                 break;
             default:
                 break;
@@ -105,5 +123,6 @@ public class BaseFragment extends Fragment implements View.OnClickListener{
         mainActivity.findViewById(R.id.userCardViewFeeling).setOnClickListener(this);
         mainActivity.findViewById(R.id.userCardViewDynamic).setOnClickListener(this);
         mainActivity.findViewById(R.id.userCircleImageView).setOnClickListener(this);
+        mainActivity.findViewById(R.id.userLogout).setOnClickListener(this);
     }
 }

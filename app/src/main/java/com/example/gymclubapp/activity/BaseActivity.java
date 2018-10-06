@@ -1,17 +1,10 @@
 package com.example.gymclubapp.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.example.gymclubapp.Util.ActivityFunctionUtil;
-import com.example.gymclubapp.entity.FragmentAdapter;
-
-import java.util.List;
+import com.example.gymclubapp.util.ActivityFunctionUtil;
 
 public class BaseActivity extends AppCompatActivity {
 
