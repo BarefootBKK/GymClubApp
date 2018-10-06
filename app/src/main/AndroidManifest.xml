@@ -78,6 +78,11 @@
             android:value=".activity.MainActivity" />
         </activity>
 
+        <!-- CoachDetailActivity -->
+        <activity android:name=".activity.CoachDetailActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

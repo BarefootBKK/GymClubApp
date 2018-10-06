@@ -17,6 +17,7 @@ import com.example.gymclubapp.fragment.subFragment.TrainingDietSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingFitnessSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingRunSubFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
@@ -37,6 +38,7 @@ public class MainActivity extends BaseActivity {
             setContentView(R.layout.activity_main);
             this.initFragment();
             this.initTabLayout();
+            initItem();
         }
     }
 
@@ -73,6 +75,9 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    /**
+     * 初始化tabLayout
+     */
     private void initTabLayout() {
         TabViewPagerController tabViewPagerController = new TabViewPagerController();
         // 课程栏
@@ -91,5 +96,9 @@ public class MainActivity extends BaseActivity {
                                             new TrainingFitnessSubFragment(),
                                             new TrainingRunSubFragment());
         tabViewPagerController.setup();
+    }
+
+    private void initItem() {
+
     }
 }

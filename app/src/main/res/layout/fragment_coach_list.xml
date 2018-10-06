@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 教练1 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/coach_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/coach_img_1"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/coach_elizabeth"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_name_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Elizabeth"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/coach_img_1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_student_num_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:baselineAlignBottom="true"
+                        android:text="124人"
+                        android:textSize="16sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_1"
+                        app:layout_constraintLeft_toRightOf="@id/coach_name_1" />
+
+                    <View
+                        android:id="@+id/coach_line_1"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dip"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.4"
+                        android:background="#5e5858"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_name_1" />
+
+                    <TextView
+                        android:id="@+id/coach_description_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="大家好，我是Elizabeth"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_line_1" />
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 教练2 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/coach_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coach_1">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/coach_img_2"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/coach_black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_name_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/coach_img_2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_student_num_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:baselineAlignBottom="true"
+                        android:text="89人"
+                        android:textSize="16sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_2"
+                        app:layout_constraintLeft_toRightOf="@id/coach_name_2" />
+
+                    <View
+                        android:id="@+id/coach_line_2"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dip"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.4"
+                        android:background="#5e5858"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_2"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_name_2" />
+
+                    <TextView
+                        android:id="@+id/coach_description_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="To be better"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_2"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_line_2" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 教练3 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/coach_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coach_2">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/coach_img_3"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/coach_lily"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_name_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Lily"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/coach_img_3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_student_num_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:baselineAlignBottom="true"
+                        android:text="230人"
+                        android:textSize="16sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_3"
+                        app:layout_constraintLeft_toRightOf="@id/coach_name_3" />
+
+                    <View
+                        android:id="@+id/coach_line_3"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dip"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.4"
+                        android:background="#5e5858"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_3"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_name_3" />
+
+                    <TextView
+                        android:id="@+id/coach_description_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Dream it possible"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_3"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_line_3" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 教练4 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/coach_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coach_3">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/coach_img_4"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/coach_peter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_name_4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Peter"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/coach_img_4"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_student_num_4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:baselineAlignBottom="true"
+                        android:text="108人"
+                        android:textSize="16sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_4"
+                        app:layout_constraintLeft_toRightOf="@id/coach_name_4" />
+
+                    <View
+                        android:id="@+id/coach_line_4"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dip"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.4"
+                        android:background="#5e5858"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_4"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_name_4" />
+
+                    <TextView
+                        android:id="@+id/coach_description_4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Try your best！"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_4"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_line_4" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 教练5 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/coach_5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coach_4">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/coach_img_5"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/coach_tina"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_name_5"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Tina"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/coach_img_5"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_student_num_5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:baselineAlignBottom="true"
+                        android:text="189人"
+                        android:textSize="16sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_5"
+                        app:layout_constraintLeft_toRightOf="@id/coach_name_5" />
+
+                    <View
+                        android:id="@+id/coach_line_5"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dip"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.4"
+                        android:background="#5e5858"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_5"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_name_5" />
+
+                    <TextView
+                        android:id="@+id/coach_description_5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="教练的介绍"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_5"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_line_5" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 教练6 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/coach_6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coach_5">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/coach_img_6"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/coach_wang"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_name_6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Wang"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/coach_img_6"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_student_num_6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:baselineAlignBottom="true"
+                        android:text="124人"
+                        android:textSize="16sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_6"
+                        app:layout_constraintLeft_toRightOf="@id/coach_name_6" />
+
+                    <View
+                        android:id="@+id/coach_line_6"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dip"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.4"
+                        android:background="#5e5858"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_6"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_name_6" />
+
+                    <TextView
+                        android:id="@+id/coach_description_6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="教练的介绍"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_6"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_line_6" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 教练7 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/coach_7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coach_6">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/coach_img_7"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/coach_barry"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_name_7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Barry"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/coach_img_7"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coach_student_num_7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:baselineAlignBottom="true"
+                        android:text="56人"
+                        android:textSize="16sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_7"
+                        app:layout_constraintLeft_toRightOf="@id/coach_name_7" />
+
+                    <View
+                        android:id="@+id/coach_line_7"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dip"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.4"
+                        android:background="#5e5858"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_7"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_name_7" />
+
+                    <TextView
+                        android:id="@+id/coach_description_7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="教练的介绍"
+                        app:layout_constraintLeft_toLeftOf="@id/coach_name_7"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coach_line_7" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
