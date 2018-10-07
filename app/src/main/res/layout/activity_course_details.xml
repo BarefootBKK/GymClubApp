@@ -8,6 +8,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@id/buttonJoinCourse"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -134,8 +135,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
                 android:alpha="0.6"
                 android:text="(≧∇≦)/"
                 android:textColor="#706161"
@@ -143,7 +144,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/courseContentCourseDetails" />
+                app:layout_constraintTop_toBottomOf="@id/view3CourseDetail" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

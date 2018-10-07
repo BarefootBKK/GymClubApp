@@ -24,6 +24,8 @@ public class TabViewPagerController {
         this.tabLayout = tabLayout;
         this.viewPager = viewPager;
         this.fragmentList = new ArrayList<>();
+
+        viewPager.setOffscreenPageLimit(4);
     }
 
     public void addFragment(Fragment... fragments) {

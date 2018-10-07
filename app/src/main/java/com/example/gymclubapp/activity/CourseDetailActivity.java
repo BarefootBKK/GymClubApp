@@ -1,9 +1,12 @@
 package com.example.gymclubapp.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gymclubapp.R;
+import com.example.gymclubapp.util.ActivityFunctionUtil;
 
 public class CourseDetailActivity extends BaseActivity {
 
@@ -50,5 +54,33 @@ public class CourseDetailActivity extends BaseActivity {
                 Toast.makeText(CourseDetailActivity.this, "加入课程成功！", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_course_details, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // 返回
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+            // 相关教练
+            case R.id.item_course_detail_relativeCoach:
+                if (((TextView) findViewById(R.id.headindCourseDetails))
+                        .getText().equals("瑜伽塑身")) {
+                    ActivityFunctionUtil.toStartActivity(this, CoachDetailActivity.class, -1, "");
+                } else {
+                    Toast.makeText(this, "找不到欸", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                break;
+        }
+        return true;
     }
 }

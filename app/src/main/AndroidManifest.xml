@@ -50,7 +50,8 @@
         <!-- TempActivity -->
         <activity
             android:name=".activity.TempActivity"
-            android:parentActivityName=".activity.MainActivity">
+            android:parentActivityName=".activity.MainActivity"
+            android:launchMode="singleTask">
             <!-- 如果要支持android4.0以下的 -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -59,7 +60,8 @@
 
         <!-- CourseDetailActivity -->
         <activity android:name=".activity.CourseDetailActivity"
-            android:parentActivityName=".activity.MainActivity">
+            android:parentActivityName=".activity.MainActivity"
+            android:launchMode="singleTask">
             <!-- 如果要支持android4.0以下的 -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -67,7 +69,8 @@
         </activity>
 
         <!-- MoreCourseActivity -->
-        <activity android:name=".activity.MoreCourseActivity"/>
+        <activity android:name=".activity.MoreCourseActivity"
+            android:launchMode="singleTask"/>
 
         <!-- TrainingRecordActivity -->
         <activity android:name=".activity.TrainingRecordActivity"
@@ -79,7 +82,8 @@
         </activity>
 
         <!-- CoachDetailActivity -->
-        <activity android:name=".activity.CoachDetailActivity">
+        <activity android:name=".activity.CoachDetailActivity"
+            android:launchMode="singleTask">
 
         </activity>
 
