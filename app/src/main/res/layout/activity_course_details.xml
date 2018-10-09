@@ -46,7 +46,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view2CourseDetail" />
             <!-- 课程标题 -->
             <TextView
-                android:id="@+id/headindCourseDetails"
+                android:id="@+id/headingCourseDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -90,7 +90,7 @@
                 android:layout_marginTop="16dp"
                 android:background="#aea0a0"
                 android:alpha="0.5"
-                app:layout_constraintTop_toBottomOf="@id/headindCourseDetails" />
+                app:layout_constraintTop_toBottomOf="@id/headingCourseDetails" />
             <!-- 训练部位 -->
             <TextView
                 android:id="@+id/positionCourseDetails"

@@ -10,7 +10,6 @@ import com.example.gymclubapp.R;
 import com.example.gymclubapp.entity.CourseContent;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.activity.CourseDetailActivity;
-import com.example.gymclubapp.activity.TempActivity;
 import com.example.gymclubapp.util.ReadFromFileUtil;
 
 public class CourseItemSubFragment extends Fragment implements View.OnClickListener{
@@ -18,7 +17,7 @@ public class CourseItemSubFragment extends Fragment implements View.OnClickListe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_course_item, container, false);
+        return inflater.inflate(R.layout.fragment_course_list, container, false);
     }
 
     @Override

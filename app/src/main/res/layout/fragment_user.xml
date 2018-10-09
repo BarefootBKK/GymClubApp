@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <ScrollView
         android:id="@+id/userScrollView"
@@ -47,8 +48,8 @@
                 android:id="@+id/verticalLine"
                 android:layout_width="1dip"
                 android:layout_height="0dp"
-                android:background="#ffffff"
                 android:alpha="0"
+                android:background="#ffffff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,12 +57,11 @@
 
             <!-- 用户详情 -->
             <android.support.v7.widget.CardView
-                android:id="@+id/useConstraintCardViewUserInfo"
+                android:id="@+id/useCardViewUserInfo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
                 app:cardCornerRadius="6dp"
                 app:cardElevation="4dp"
@@ -110,8 +110,8 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginTop="12dp"
-                        android:background="#aea0a0"
                         android:alpha="0.5"
+                        android:background="#aea0a0"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/userCircleImageView" />
@@ -173,18 +173,19 @@
                 android:id="@+id/userCardViewTrainingData"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="32dp"
-                android:foreground="?attr/selectableItemBackground"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="24dp"
                 android:clickable="true"
                 android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
                 app:cardBackgroundColor="#ffffff"
                 app:cardCornerRadius="6dp"
-                app:cardElevation="2dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/verticalLine"
-                app:layout_constraintTop_toBottomOf="@id/useConstraintCardViewUserInfo">
+                app:cardElevation="1dp"
+                app:layout_constraintEnd_toStartOf="@+id/verticalLine"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/useCardViewUserInfo"
+                app:layout_constraintTop_toBottomOf="@id/useCardViewUserInfo">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
@@ -223,17 +224,17 @@
                 android:id="@+id/userCardViewCollection"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginTop="32dp"
-                android:foreground="?attr/selectableItemBackground"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
                 android:clickable="true"
                 android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="6dp"
-                app:cardElevation="2dp"
-                app:layout_constraintLeft_toRightOf="@id/verticalLine"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/useConstraintCardViewUserInfo">
+                app:cardElevation="1dp"
+                app:layout_constraintEnd_toEndOf="@+id/useCardViewUserInfo"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/verticalLine"
+                app:layout_constraintTop_toTopOf="@+id/userCardViewTrainingData">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
@@ -273,16 +274,16 @@
                 android:id="@+id/userCardViewFeeling"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardElevation="1dp"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="6dp"
-                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="@+id/userCardViewTrainingData"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/verticalLine"
+                app:layout_constraintStart_toStartOf="@+id/userCardViewTrainingData"
                 app:layout_constraintTop_toBottomOf="@id/userCardViewTrainingData">
 
                 <android.support.constraint.ConstraintLayout
@@ -323,16 +324,16 @@
                 android:id="@+id/userCardViewDynamic"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardElevation="1dp"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="6dp"
-                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="@+id/userCardViewCollection"
                 app:layout_constraintLeft_toRightOf="@id/verticalLine"
                 app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/userCardViewCollection"
                 app:layout_constraintTop_toBottomOf="@id/userCardViewCollection">
 
                 <android.support.constraint.ConstraintLayout
@@ -369,51 +370,51 @@
             </android.support.v7.widget.CardView>
 
             <View
-                android:id="@+id/verticalLine2"
+                android:id="@+id/horizontalLine2"
                 android:layout_width="0dp"
                 android:layout_height="0.5dip"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:alpha="0.4"
                 android:background="#7e7777"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/userCardViewDynamic"
+                app:layout_constraintStart_toStartOf="@+id/userCardViewFeeling"
                 app:layout_constraintTop_toBottomOf="@id/userCardViewDynamic" />
 
             <TextView
                 android:id="@+id/userLogout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
                 android:layout_marginTop="8dp"
                 android:text="退出登录"
                 android:textColor="#545151"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/userCardViewDynamic" />
+                app:layout_constraintEnd_toEndOf="@+id/horizontalLine2"
+                app:layout_constraintStart_toStartOf="@+id/horizontalLine2"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalLine2" />
 
             <View
-                android:id="@+id/verticalLine3"
+                android:id="@+id/horizontalLine3"
                 android:layout_width="0dp"
                 android:layout_height="0.5dip"
-                android:layout_marginBottom="24dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:alpha="0.4"
                 android:background="#7e7777"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/userLogout"
+                app:layout_constraintStart_toStartOf="@+id/userLogout"
                 app:layout_constraintTop_toBottomOf="@id/userLogout" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="〉"
+                android:textColor="#857e7e"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/horizontalLine3"
+                app:layout_constraintEnd_toEndOf="@+id/horizontalLine2"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalLine2" />
 
         </android.support.constraint.ConstraintLayout>
 

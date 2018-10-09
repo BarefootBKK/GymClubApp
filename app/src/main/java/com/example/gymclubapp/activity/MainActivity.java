@@ -1,15 +1,11 @@
 package com.example.gymclubapp.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.util.ActivityFunctionUtil;
-import com.example.gymclubapp.controller.ActivityController;
-import com.example.gymclubapp.controller.MyFragmentController;
+import com.example.gymclubapp.controller.MainFragmentManager;
 import com.example.gymclubapp.controller.TabViewPagerController;
 import com.example.gymclubapp.fragment.subFragment.CourseCoachSubFragment;
 import com.example.gymclubapp.fragment.subFragment.CourseItemSubFragment;
@@ -17,60 +13,35 @@ import com.example.gymclubapp.fragment.subFragment.TrainingDietSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingFitnessSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingRunSubFragment;
 
-import java.util.List;
-
 public class MainActivity extends BaseActivity {
 
+    private MainFragmentManager mainFragmentManager;
     private final int defaultFragmentIndex = 0;
-    private final int nullFragmentIndex = -1;
-    private int currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        this.initFragment();
+        this.initTabLayout();
 
-        if (!ActivityFunctionUtil.getIsLogin()) {
+        /**if (!ActivityFunctionUtil.getIsLogin()) {
             // 若是第一次打开应用，进入登录界面
             startActivity(new Intent(this, SignInActivity.class));
             ActivityController.finishActivity(this);
         } else {
-            setContentView(R.layout.activity_main);
-            this.initFragment();
-            this.initTabLayout();
-        }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
+        }**/
     }
 
     /**
      * 初始化fragment
      */
     private void initFragment() {
-        MyFragmentController.addFragment(getSupportFragmentManager().findFragmentById(R.id.trainingFragment));
-        MyFragmentController.addFragment(getSupportFragmentManager().findFragmentById(R.id.courseFragment));
-        MyFragmentController.addFragment(getSupportFragmentManager().findFragmentById(R.id.userFragment));
-        this.currentFragment = nullFragmentIndex;
-        showFragment(defaultFragmentIndex, false);
-    }
-
-    /**
-     * 显示指定fragment
-     * @param fragmentIndex
-     */
-    public void showFragment(int fragmentIndex, boolean isForcedReplace) {
-
-        if (currentFragment != fragmentIndex || !isForcedReplace) {
-            List<Fragment> fragmentList = MyFragmentController.getFragmentList();
-            // 隐藏前一fragment
-            for (Fragment fragment : fragmentList) {
-                getSupportFragmentManager().beginTransaction().hide(fragment).commit();
-            }
-            getSupportFragmentManager().beginTransaction().show(fragmentList.get(fragmentIndex)).commit();
-            currentFragment = fragmentIndex;
-        }
+        mainFragmentManager = new MainFragmentManager(this);
+        mainFragmentManager.addFragment(getSupportFragmentManager().findFragmentById(R.id.trainingFragment));
+        mainFragmentManager.addFragment(getSupportFragmentManager().findFragmentById(R.id.courseFragment));
+        mainFragmentManager.addFragment(getSupportFragmentManager().findFragmentById(R.id.userFragment));
+        mainFragmentManager.showFragment(defaultFragmentIndex, false);
     }
 
     /**
@@ -94,5 +65,13 @@ public class MainActivity extends BaseActivity {
                                             new TrainingFitnessSubFragment(),
                                             new TrainingRunSubFragment());
         tabViewPagerController.setup();
+    }
+
+    /**
+     * 获取已实例化的mainFragmentManager
+     * @return
+     */
+    public MainFragmentManager getMainFragmentManager() {
+        return this.mainFragmentManager;
     }
 }

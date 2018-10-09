@@ -1,17 +1,13 @@
 package com.example.gymclubapp.fragment.subFragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gymclubapp.R;
 import com.example.gymclubapp.activity.CoachDetailActivity;
-import com.example.gymclubapp.controller.MyFragmentController;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
 
 public class CourseCoachSubFragment extends Fragment {

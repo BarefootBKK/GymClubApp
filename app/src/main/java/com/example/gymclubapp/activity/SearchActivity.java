@@ -14,25 +14,6 @@ public class SearchActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        setSupportActionBar((Toolbar) findViewById(R.id.searchToolbar));
-
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);      // 显示返回按钮
-            actionBar.setDisplayShowTitleEnabled(false);    // 隐藏默认title
-        }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            default:
-                break;
-        }
-        return true;
+        setActivityToolbar(R.id.searchToolbar, true, false);
     }
 }

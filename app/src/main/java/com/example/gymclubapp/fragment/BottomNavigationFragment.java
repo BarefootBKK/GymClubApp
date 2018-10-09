@@ -38,13 +38,13 @@ public class BottomNavigationFragment extends Fragment {
 
             switch (item.getItemId()) {
                 case R.id.navigation_training:
-                    mainActivity.showFragment(0, false);
+                    mainActivity.getMainFragmentManager().showFragment(0, false);
                     return true;
                 case R.id.navigation_course:
-                    mainActivity.showFragment(1, false);
+                    mainActivity.getMainFragmentManager().showFragment(1, false);
                     return true;
                 case R.id.navigation_user:
-                    mainActivity.showFragment(2, false);
+                    mainActivity.getMainFragmentManager().showFragment(2, false);
                     return true;
             }
             return false;

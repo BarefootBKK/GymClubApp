@@ -60,12 +60,12 @@
                         android:id="@+id/coach_student_num_1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="16dp"
                         android:baselineAlignBottom="true"
                         android:text="124人"
                         android:textSize="16sp"
                         app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_1"
-                        app:layout_constraintLeft_toRightOf="@id/coach_name_1" />
+                        app:layout_constraintRight_toRightOf="parent" />
 
                     <View
                         android:id="@+id/coach_line_1"
@@ -139,12 +139,12 @@
                         android:id="@+id/coach_student_num_2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="16dp"
                         android:baselineAlignBottom="true"
                         android:text="89人"
                         android:textSize="16sp"
                         app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_2"
-                        app:layout_constraintLeft_toRightOf="@id/coach_name_2" />
+                        app:layout_constraintRight_toRightOf="parent" />
 
                     <View
                         android:id="@+id/coach_line_2"
@@ -219,12 +219,12 @@
                         android:id="@+id/coach_student_num_3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="16dp"
                         android:baselineAlignBottom="true"
                         android:text="230人"
                         android:textSize="16sp"
                         app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_3"
-                        app:layout_constraintLeft_toRightOf="@id/coach_name_3" />
+                        app:layout_constraintRight_toRightOf="parent" />
 
                     <View
                         android:id="@+id/coach_line_3"
@@ -299,12 +299,12 @@
                         android:id="@+id/coach_student_num_4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="16dp"
                         android:baselineAlignBottom="true"
                         android:text="108人"
                         android:textSize="16sp"
                         app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_4"
-                        app:layout_constraintLeft_toRightOf="@id/coach_name_4" />
+                        app:layout_constraintRight_toRightOf="parent" />
 
                     <View
                         android:id="@+id/coach_line_4"
@@ -379,12 +379,12 @@
                         android:id="@+id/coach_student_num_5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="16dp"
                         android:baselineAlignBottom="true"
                         android:text="189人"
                         android:textSize="16sp"
                         app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_5"
-                        app:layout_constraintLeft_toRightOf="@id/coach_name_5" />
+                        app:layout_constraintRight_toRightOf="parent" />
 
                     <View
                         android:id="@+id/coach_line_5"
@@ -459,12 +459,12 @@
                         android:id="@+id/coach_student_num_6"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="16dp"
                         android:baselineAlignBottom="true"
                         android:text="124人"
                         android:textSize="16sp"
                         app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_6"
-                        app:layout_constraintLeft_toRightOf="@id/coach_name_6" />
+                        app:layout_constraintRight_toRightOf="parent" />
 
                     <View
                         android:id="@+id/coach_line_6"
@@ -539,12 +539,12 @@
                         android:id="@+id/coach_student_num_7"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="16dp"
                         android:baselineAlignBottom="true"
                         android:text="56人"
                         android:textSize="16sp"
                         app:layout_constraintBaseline_toBaselineOf="@+id/coach_name_7"
-                        app:layout_constraintLeft_toRightOf="@id/coach_name_7" />
+                        app:layout_constraintRight_toRightOf="parent" />
 
                     <View
                         android:id="@+id/coach_line_7"

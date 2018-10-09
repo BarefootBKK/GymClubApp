@@ -10,15 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- MainActivity -->
-        <activity
-            android:name=".activity.MainActivity"
-            android:launchMode="singleTask">
+        <!-- LaunchActivity -->
+        <activity android:name=".activity.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask">
         </activity>
 
         <!-- SignInActivity -->
@@ -83,8 +87,12 @@
 
         <!-- CoachDetailActivity -->
         <activity android:name=".activity.CoachDetailActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:launchMode="singleTask">
-
+            <!-- 如果要支持android4.0以下的 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
         </activity>
 
     </application>

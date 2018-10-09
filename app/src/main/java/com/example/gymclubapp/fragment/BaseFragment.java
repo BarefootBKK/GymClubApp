@@ -57,31 +57,6 @@ public class BaseFragment extends Fragment implements View.OnClickListener{
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_search:
-                ActivityFunctionUtil.toStartActivity(mainActivity, SearchActivity.class,
-                        R.drawable.ic_search, "search");
-                break;
-            case R.id.item_record:
-                ActivityFunctionUtil.toStartActivity(mainActivity, TrainingRecordActivity.class,
-                        R.drawable.ic_my_records, "MyRecord");
-                break;
-            case R.id.item_message:
-                ActivityFunctionUtil.toStartActivity(mainActivity, TempActivity.class,
-                        R.drawable.ic_msg, "Message");
-                break;
-            case R.id.item_more_course:
-                ActivityFunctionUtil.toStartActivity(mainActivity, MoreCourseActivity.class,
-                        R.drawable.ic_msg, "Message");
-                break;
-            default:
-                break;
-        }
-        return true;
-    }
-
-    @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
@@ -108,6 +83,7 @@ public class BaseFragment extends Fragment implements View.OnClickListener{
             case R.id.userLogout:
                 ActivityFunctionUtil.toStartActivity(mainActivity, SignInActivity.class,
                         -1, "");
+                mainActivity.finish();
                 break;
             default:
                 break;

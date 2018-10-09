@@ -13,24 +13,6 @@ public class TrainingRecordActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_training_record);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbarMyTrainingRecord));
-
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            default:
-                break;
-        }
-        return true;
+        setActivityToolbar(R.id.toolbarMyTrainingRecord, true, true);
     }
 }

@@ -17,34 +17,14 @@ public class SignUpActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        setSupportActionBar((Toolbar) findViewById(R.id.signUpToolbar));
+        setActivityToolbar(R.id.signUpToolbar, true, false);
 
-        ActionBar actionBar = getSupportActionBar();
         Button button_sign_up = findViewById(R.id.button_register);
-
         button_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SignUpActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
             }
         });
-
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);      // 显示返回按钮
-            actionBar.setDisplayShowTitleEnabled(false);    // 隐藏默认title
-        }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            default:
-                break;
-        }
-        return true;
     }
 }

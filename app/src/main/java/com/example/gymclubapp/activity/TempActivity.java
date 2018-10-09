@@ -20,31 +20,11 @@ public class TempActivity extends BaseActivity {
         String[] data = getIntent().getStringArrayExtra("extra_data");
         int resId = getIntent().getIntExtra("extra_res", -1);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarTemp);
-        setSupportActionBar(toolbar);
+        setActivityToolbar(R.id.toolbarTemp, true, true);
         ((TextView) findViewById(R.id.tempContent)).setText("这是从【" + data[0] + "】传来的数据.");
-
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);      // 显示返回按钮
-            actionBar.setTitle(data[0]);
-        }
 
         if (resId >= 0) {
             ((CircleImageView) findViewById(R.id.tempCircleImageView)).setImageResource(resId);
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            default:
-                break;
-        }
-        return true;
     }
 }

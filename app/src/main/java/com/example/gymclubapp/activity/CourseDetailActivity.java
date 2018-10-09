@@ -19,7 +19,7 @@ import com.example.gymclubapp.util.ActivityFunctionUtil;
 public class CourseDetailActivity extends BaseActivity {
 
     int[] viewId = {R.id.posterCourseDetails,
-                            R.id.headindCourseDetails,
+                            R.id.headingCourseDetails,
                             R.id.bodyPositionCourseDetails,
                             R.id.courseContentCourseDetails};
     @Override
@@ -28,14 +28,8 @@ public class CourseDetailActivity extends BaseActivity {
         setContentView(R.layout.activity_course_details);
         String[] courseDetailArray = getIntent().getStringArrayExtra("extra_data");
         int coursePosterId = getIntent().getIntExtra("extra_res", -1);
-
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbarCourseDetails));
-
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);      // 显示返回按钮
-            actionBar.setDisplayShowTitleEnabled(false);    // 隐藏标题
-        }
+        // 设置toolbar
+        setActivityToolbar(R.id.toolbarCourseDetails, true, false);
 
         if (courseDetailArray.length > 0) {
             for (int i = 0; i < courseDetailArray.length; i++) {
@@ -59,28 +53,6 @@ public class CourseDetailActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_course_details, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // 返回
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            // 相关教练
-            case R.id.item_course_detail_relativeCoach:
-                if (((TextView) findViewById(R.id.headindCourseDetails))
-                        .getText().equals("瑜伽塑身")) {
-                    ActivityFunctionUtil.toStartActivity(this, CoachDetailActivity.class, -1, "");
-                } else {
-                    Toast.makeText(this, "找不到欸", Toast.LENGTH_SHORT).show();
-                }
-                break;
-            default:
-                break;
-        }
         return true;
     }
 }

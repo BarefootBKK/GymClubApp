@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- 卡片1 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/course_cardView_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="4dp"
+                app:layout_constraintDimensionRatio="w,9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <!-- 图片 -->
+                    <ImageView
+                        android:id="@+id/course_image_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/yoga" />
+                    <!-- 隔层蒙版 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="#444446" />
+                    <!-- 标题 -->
+                    <TextView
+                        android:id="@+id/course_name_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="瑜伽塑身"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- 卡片2 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/course_cardView_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="4dp"
+                app:layout_constraintDimensionRatio="w,9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/course_cardView_1">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!-- 图片 -->
+                    <ImageView
+                        android:id="@+id/course_image_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/abdominal_muscle" />
+                    <!-- 隔层蒙版 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="#444446" />
+                    <!-- 标题 -->
+                    <TextView
+                        android:id="@+id/course_name_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="腹肌训练"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- 卡片3 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/course_cardView_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="4dp"
+                app:layout_constraintDimensionRatio="w,9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/course_cardView_2">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!-- 图片 -->
+                    <ImageView
+                        android:id="@+id/course_image_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/run" />
+                    <!-- 隔层蒙版 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="#444446" />
+                    <!-- 标题 -->
+                    <TextView
+                        android:id="@+id/course_name_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="跑步热身"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 卡片4 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/course_cardView_4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="4dp"
+                app:layout_constraintDimensionRatio="w,9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/course_cardView_3">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!-- 图片 -->
+                    <ImageView
+                        android:id="@+id/course_image_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/fat_reduction" />
+                    <!-- 隔层蒙版 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="#444446" />
+                    <!-- 标题 -->
+                    <TextView
+                        android:id="@+id/course_name_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="极速燃脂"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 卡片5 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/course_cardView_5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="4dp"
+                app:layout_constraintDimensionRatio="w,9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/course_cardView_4">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!-- 图片 -->
+                    <ImageView
+                        android:id="@+id/course_image_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/muscle_augmentation" />
+                    <!-- 隔层蒙版 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="#444446" />
+                    <!-- 标题 -->
+                    <TextView
+                        android:id="@+id/course_name_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="增肌专项"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 卡片6 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/course_cardView_6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="4dp"
+                app:layout_constraintDimensionRatio="w,9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/course_cardView_5">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!-- 图片 -->
+                    <ImageView
+                        android:id="@+id/course_image_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/buttocks_legs" />
+                    <!-- 隔层蒙版 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="#444446" />
+                    <!-- 标题 -->
+                    <TextView
+                        android:id="@+id/course_name_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="臀腿训练"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- 卡片7 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/course_cardView_7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="4dp"
+                app:layout_constraintDimensionRatio="w,9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/course_cardView_6">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!-- 图片 -->
+                    <ImageView
+                        android:id="@+id/course_image_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/upper_limb" />
+                    <!-- 隔层蒙版 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="#444446" />
+                    <!-- 标题 -->
+                    <TextView
+                        android:id="@+id/course_name_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="上肢强化"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <!-- 卡片8 -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/course_cardView_8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="4dp"
+                app:layout_constraintDimensionRatio="w,9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/course_cardView_7">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!-- 图片 -->
+                    <ImageView
+                        android:id="@+id/course_image_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/relax" />
+                    <!-- 隔层蒙版 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.2"
+                        android:background="#444446" />
+                    <!-- 标题 -->
+                    <TextView
+                        android:id="@+id/course_name_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="舒缓放松"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <View
+                android:id="@+id/courseTempLine"
+                android:layout_width="0dp"
+                android:layout_height="1dip"
+                android:layout_marginTop="32dp"
+                android:alpha="0"
+                android:background="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/course_cardView_8" />
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
