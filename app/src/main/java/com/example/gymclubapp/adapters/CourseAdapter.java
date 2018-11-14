@@ -42,7 +42,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.showToast(mContext, "Clicked!");
+                CourseContent courseContent = ReadFromFileUtil.getCourseContent(mContext.getResources()
+                        .openRawResource(R.raw.course_yoga));
+                ActivityFunctionUtil.toStartActivity(mContext, CourseDetailActivity.class,
+                        R.drawable.yoga, courseContent.toArray());
             }
         });
     }
@@ -67,7 +70,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
             super(itemView);
             courseImage = itemView.findViewById(R.id.my_course_image);
             courseText = itemView.findViewById(R.id.my_course_title);
-            cardView = itemView.findViewById(R.id.coach_card);
+            cardView = itemView.findViewById(R.id.course_cardView);
         }
     }
 }

@@ -69,9 +69,9 @@ public class HttpUtil {
 
     public static Response sendOkHttpRequestByPOST(String address, RequestBody requestBody, int method) throws IOException{
         OkHttpClient client = new OkHttpClient();
-        client.newBuilder()
-                .connectTimeout(1, TimeUnit.SECONDS)
-                .readTimeout(1, TimeUnit.SECONDS).build();
+//        client.newBuilder()
+//                .connectTimeout(100, TimeUnit.MILLISECONDS)
+//                .readTimeout(100, TimeUnit.MILLISECONDS).build();
         Log.d("测试", "sendOkHttpRequest: " + method + "  " + address);
         Request request = new Request.Builder()
                 .url(address)

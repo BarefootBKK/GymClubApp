@@ -37,20 +37,25 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.signInButtonIn:
-                User user = getUser();
-                int verify_code = AccountUtil.isValid(user);
-                if (verify_code == 0 && ServerConfig.isValid()) {
-                    NetworkTask userTask = new NetworkTask(ServerConfig.getAddress("/login"),
-                            HttpConfig.POST, this);
-                    userTask.execute(AccountUtil.getRequestBody(user));
-                } else {
-                    if (verify_code != 0) {
-                        ToastUtil.showToast(SignInActivity.this,
-                                AccountUtil.getAccountFailureMessage(verify_code));
+                if (!ServerConfig.isSetToOffLine) {
+                    User user = getUser();
+                    int verify_code = AccountUtil.isValid(user);
+                    if (verify_code == 0 && ServerConfig.isValid()) {
+                        NetworkTask userTask = new NetworkTask(ServerConfig.getAddress("/login"),
+                                HttpConfig.POST, this);
+                        userTask.execute(AccountUtil.getRequestBody(user));
                     } else {
-                        ToastUtil.showToast(SignInActivity.this, "服务器参数出错");
+                        if (verify_code != 0) {
+                            ToastUtil.showToast(SignInActivity.this,
+                                    AccountUtil.getAccountFailureMessage(verify_code));
+                        } else {
+                            ToastUtil.showToast(SignInActivity.this, "服务器参数出错");
+                        }
                     }
+                } else {
+                    onSuccess();
                 }
+
                 break;
             case R.id.signInButtonUp:
                 ActivityFunctionUtil.toStartActivity(this, SignUpActivity.class, -1, "");

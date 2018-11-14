@@ -1,6 +1,7 @@
 package com.example.gymclubapp.util;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -83,16 +84,16 @@ public class ActivityFunctionUtil {
     }
 
     /**
-     * 跳转至目标Class
+     *
+     * @param context
      * @param targetClass
-     * @param data
      * @param resId
+     * @param dataArray
      */
-    public static void toStartActivity(Activity activity, Class targetClass, int resId, String... dataArray) {
-
-        Intent intent = new Intent(activity, targetClass);
+    public static void toStartActivity(Context context, Class targetClass, int resId, String... dataArray) {
+        Intent intent = new Intent(context, targetClass);
         intent.putExtra("extra_data", dataArray);
         intent.putExtra("extra_res", resId);
-        activity.startActivity(intent);
+        context.startActivity(intent);
     }
 }

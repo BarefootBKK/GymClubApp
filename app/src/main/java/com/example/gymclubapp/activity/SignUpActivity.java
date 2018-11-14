@@ -34,19 +34,23 @@ public class SignUpActivity extends BaseActivity implements HttpListener {
         button_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User user = getUser();
-                int verify_code = AccountUtil.isValid(user);
-                if (verify_code == 0 && ServerConfig.isValid()) {
-                    NetworkTask userTask = new NetworkTask(ServerConfig.getAddress("/register"),
-                            HttpConfig.POST, SignUpActivity.this);
-                    userTask.execute(AccountUtil.getRequestBody(user));
-                } else {
-                    if (verify_code != 0) {
-                        ToastUtil.showToast(SignUpActivity.this,
-                                AccountUtil.getAccountFailureMessage(verify_code));
+                if (!ServerConfig.isSetToOffLine) {
+                    User user = getUser();
+                    int verify_code = AccountUtil.isValid(user);
+                    if (verify_code == 0 && ServerConfig.isValid()) {
+                        NetworkTask userTask = new NetworkTask(ServerConfig.getAddress("/register"),
+                                HttpConfig.POST, SignUpActivity.this);
+                        userTask.execute(AccountUtil.getRequestBody(user));
                     } else {
-                        ToastUtil.showToast(SignUpActivity.this, "服务器参数出错");
+                        if (verify_code != 0) {
+                            ToastUtil.showToast(SignUpActivity.this,
+                                    AccountUtil.getAccountFailureMessage(verify_code));
+                        } else {
+                            ToastUtil.showToast(SignUpActivity.this, "服务器参数出错");
+                        }
                     }
+                } else {
+                    ToastUtil.showToast(SignUpActivity.this, "当前处于离线模式，请到程序里更改！");
                 }
             }
         });
