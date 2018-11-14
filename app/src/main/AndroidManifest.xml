@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
 
         <!-- LaunchActivity -->
-        <activity android:name=".activity.LaunchActivity">
+        <activity android:name=".activity.LaunchActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,12 +29,13 @@
         <!-- SignInActivity -->
         <activity
             android:name=".activity.SignInActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
 
         <!-- SignUpActivity -->
         <activity
             android:name=".activity.SignUpActivity"
-            android:parentActivityName=".activity.SignInActivity">
+            android:parentActivityName=".activity.SignInActivity"
+            android:launchMode="singleTask">
 
             <!-- 如果要支持android4.0以下的 -->
             <meta-data
@@ -44,7 +46,8 @@
         <!-- SearchActivity -->
         <activity
             android:name=".activity.SearchActivity"
-            android:parentActivityName=".activity.MainActivity">
+            android:parentActivityName=".activity.MainActivity"
+            android:launchMode="singleTask">
             <!-- 如果要支持android4.0以下的 -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -78,6 +81,7 @@
 
         <!-- TrainingRecordActivity -->
         <activity android:name=".activity.TrainingRecordActivity"
+            android:launchMode="singleTask"
             android:parentActivityName=".activity.MainActivity">
         <!-- 如果要支持android4.0以下的 -->
         <meta-data
@@ -94,7 +98,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
         </activity>
-
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

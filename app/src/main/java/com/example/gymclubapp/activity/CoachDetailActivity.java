@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.gymclubapp.R;
+import com.example.gymclubapp.util.ToastUtil;
 
 public class CoachDetailActivity extends BaseActivity {
     @Override
@@ -19,7 +20,7 @@ public class CoachDetailActivity extends BaseActivity {
         button_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CoachDetailActivity.this, "报名成功！", Toast.LENGTH_SHORT).show();
+                ToastUtil.showToast(CoachDetailActivity.this, "报名成功！");
             }
         });
     }

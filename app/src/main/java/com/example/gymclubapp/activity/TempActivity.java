@@ -20,6 +20,7 @@ public class TempActivity extends BaseActivity {
         String[] data = getIntent().getStringArrayExtra("extra_data");
         int resId = getIntent().getIntExtra("extra_res", -1);
 
+        ((Toolbar) findViewById(R.id.toolbarTemp)).setTitle(data[0]);
         setActivityToolbar(R.id.toolbarTemp, true, true);
         ((TextView) findViewById(R.id.tempContent)).setText("这是从【" + data[0] + "】传来的数据.");
 

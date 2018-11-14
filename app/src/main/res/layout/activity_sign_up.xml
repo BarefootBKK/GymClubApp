@@ -47,7 +47,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/edit_username_up"
+                android:id="@+id/signUpEditUser"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
@@ -66,7 +66,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/edit_password_up"
+                android:id="@+id/signUpEditPassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -75,13 +75,13 @@
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/edit_username_up"
+                app:layout_constraintEnd_toEndOf="@+id/signUpEditUser"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/edit_username_up"
-                app:layout_constraintTop_toBottomOf="@+id/edit_username_up" />
+                app:layout_constraintStart_toStartOf="@+id/signUpEditUser"
+                app:layout_constraintTop_toBottomOf="@+id/signUpEditUser" />
 
             <EditText
-                android:id="@+id/edit_password_confirm"
+                android:id="@+id/signUpEditPasswordCfm"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -90,10 +90,10 @@
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/edit_password_up"
+                app:layout_constraintEnd_toEndOf="@+id/signUpEditPassword"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/edit_password_up"
-                app:layout_constraintTop_toBottomOf="@+id/edit_password_up" />
+                app:layout_constraintStart_toStartOf="@+id/signUpEditPassword"
+                app:layout_constraintTop_toBottomOf="@+id/signUpEditPassword" />
 
             <Button
                 android:id="@+id/button_register"
@@ -108,10 +108,10 @@
                 android:textSize="19dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/edit_password_confirm"
+                app:layout_constraintEnd_toEndOf="@+id/signUpEditPasswordCfm"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/edit_password_confirm"
-                app:layout_constraintTop_toBottomOf="@+id/edit_password_confirm" />
+                app:layout_constraintStart_toStartOf="@+id/signUpEditPasswordCfm"
+                app:layout_constraintTop_toBottomOf="@+id/signUpEditPasswordCfm" />
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>

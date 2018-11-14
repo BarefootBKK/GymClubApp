@@ -5,9 +5,10 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.controller.MainFragmentManager;
+import com.example.gymclubapp.controller.MyFragmentController;
 import com.example.gymclubapp.controller.TabViewPagerController;
-import com.example.gymclubapp.fragment.subFragment.CourseCoachSubFragment;
+import com.example.gymclubapp.fragment.subFragment.CoachItemSubFragment;
+import com.example.gymclubapp.fragment.subFragment.CourseItemSubFragment;
 import com.example.gymclubapp.fragment.subFragment.CourseItemSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingDietSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingFitnessSubFragment;
@@ -15,7 +16,7 @@ import com.example.gymclubapp.fragment.subFragment.TrainingRunSubFragment;
 
 public class MainActivity extends BaseActivity {
 
-    private MainFragmentManager mainFragmentManager;
+    private MyFragmentController myFragmentController;
     private final int defaultFragmentIndex = 0;
 
     @Override
@@ -24,24 +25,17 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         this.initFragment();
         this.initTabLayout();
-
-        /**if (!ActivityFunctionUtil.getIsLogin()) {
-            // 若是第一次打开应用，进入登录界面
-            startActivity(new Intent(this, SignInActivity.class));
-            ActivityController.finishActivity(this);
-        } else {
-        }**/
     }
 
     /**
      * 初始化fragment
      */
     private void initFragment() {
-        mainFragmentManager = new MainFragmentManager(this);
-        mainFragmentManager.addFragment(getSupportFragmentManager().findFragmentById(R.id.trainingFragment));
-        mainFragmentManager.addFragment(getSupportFragmentManager().findFragmentById(R.id.courseFragment));
-        mainFragmentManager.addFragment(getSupportFragmentManager().findFragmentById(R.id.userFragment));
-        mainFragmentManager.showFragment(defaultFragmentIndex, false);
+        myFragmentController = new MyFragmentController(this);
+        myFragmentController.addFragment(getSupportFragmentManager().findFragmentById(R.id.trainingFragment));
+        myFragmentController.addFragment(getSupportFragmentManager().findFragmentById(R.id.courseFragment));
+        myFragmentController.addFragment(getSupportFragmentManager().findFragmentById(R.id.userFragment));
+        myFragmentController.showFragment(defaultFragmentIndex, false);
     }
 
     /**
@@ -49,14 +43,24 @@ public class MainActivity extends BaseActivity {
      */
     private void initTabLayout() {
         TabViewPagerController tabViewPagerController = new TabViewPagerController();
-        // 课程栏
+        /**
+         * 课程栏
+         * 1.添加tab
+         * 2.添加fragment
+         * 3.建立
+         */
         tabViewPagerController.makeNewAdapter(getSupportFragmentManager(),
                 (TabLayout) findViewById(R.id.tabLayoutCourse),
                 (ViewPager) findViewById(R.id.viewPagerCourse));
         tabViewPagerController.addTab("课程", "教练");
-        tabViewPagerController.addFragment(new CourseItemSubFragment(), new CourseCoachSubFragment());
+        tabViewPagerController.addFragment(new CourseItemSubFragment(), new CoachItemSubFragment());
         tabViewPagerController.setup();
-        // 训练栏
+        /**
+         * 训练栏
+         * 1.添加tab
+         * 2.添加fragment
+         * 3.建立
+         */
         tabViewPagerController.makeNewAdapter(getSupportFragmentManager(),
                 (TabLayout) findViewById(R.id.tabLayoutTraining),
                 (ViewPager) findViewById(R.id.viewPagerTraining));
@@ -71,7 +75,7 @@ public class MainActivity extends BaseActivity {
      * 获取已实例化的mainFragmentManager
      * @return
      */
-    public MainFragmentManager getMainFragmentManager() {
-        return this.mainFragmentManager;
+    public MyFragmentController getMyFragmentController() {
+        return this.myFragmentController;
     }
 }

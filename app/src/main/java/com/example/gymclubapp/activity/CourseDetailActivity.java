@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.gymclubapp.R;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
+import com.example.gymclubapp.util.ToastUtil;
 
 public class CourseDetailActivity extends BaseActivity {
 
@@ -45,7 +46,7 @@ public class CourseDetailActivity extends BaseActivity {
         buttonJoinCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CourseDetailActivity.this, "加入课程成功！", Toast.LENGTH_SHORT).show();
+                ToastUtil.showToast(CourseDetailActivity.this, "加入课程成功！");
             }
         });
     }
