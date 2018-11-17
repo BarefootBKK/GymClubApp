@@ -25,6 +25,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.GenericArrayType;
@@ -46,7 +47,7 @@ public class CoachItemSubFragment extends Fragment {
                 new HttpListener() {
                     @Override
                     public void onMessage(String jsonData) {
-                        CoachAdapter coachAdapter = new CoachAdapter(parseJSOWithJSONObject(jsonData), R.layout.coach_item, getActivity());
+                        CoachAdapter coachAdapter = new CoachAdapter(parseJSONWithGSON(jsonData), R.layout.coach_item, getActivity());
                         RecyclerView recyclerView = getActivity().findViewById(R.id.coach_ry);
                         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
                         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -60,7 +61,7 @@ public class CoachItemSubFragment extends Fragment {
                     }
 
                     @Override
-                    public void onFailure(int failure_code) {
+                    public void onFailure(int failure_code, String failure_data) {
                         Log.d("测试", "onFailure: ");
                     }
                 });
@@ -69,13 +70,21 @@ public class CoachItemSubFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
     }
 
-    private List<Coach> parseJSOWithJSONObject(String jasonData) {
-        Log.d("测试", "parseJSOWithJSONObject: " + jasonData);
+    private List<Coach> parseJSONWithGSON(String jasonData) {
+        Log.d("测试", "parseJSONWithGSON: " + jasonData);
         List<Coach> coachList = new ArrayList<>();
         try {
-            Gson gson = new Gson();
-            coachList = gson.fromJson(jasonData,
-                    new TypeToken<List<Coach>>(){}.getType());
+            JSONArray jsonArray = new JSONArray(jasonData);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                Coach coach = new Coach();
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                coach.setCoachName(jsonObject.getString("coach_name"));
+                coach.setCoachDescription(jsonObject.getString("coach_signature"));
+                coach.setStudentNum(jsonObject.getString("stu_num"));
+                coach.setCoachImageUrl(ServerConfig.getAddress() +
+                        jsonObject.getString("head_img_url"));
+                coachList.add(coach);
+            }
         } catch (Exception e) {
             ToastUtil.showToast(getActivity(), "无法解析的json数据!" + jasonData);
         }

@@ -22,6 +22,9 @@ import com.example.gymclubapp.util.AccountUtil;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.util.ToastUtil;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class SignUpActivity extends BaseActivity implements HttpListener {
 
     @Override
@@ -37,7 +40,7 @@ public class SignUpActivity extends BaseActivity implements HttpListener {
                 if (!ServerConfig.isSetToOffLine) {
                     User user = getUser();
                     int verify_code = AccountUtil.isValid(user);
-                    if (verify_code == 0 && ServerConfig.isValid()) {
+                    if (verify_code == 0) {
                         NetworkTask userTask = new NetworkTask(ServerConfig.getAddress("/register"),
                                 HttpConfig.POST, SignUpActivity.this);
                         userTask.execute(AccountUtil.getRequestBody(user));
@@ -58,7 +61,7 @@ public class SignUpActivity extends BaseActivity implements HttpListener {
 
     @Override
     public void onMessage(String jsonData) {
-
+        ToastUtil.showToast(this, jsonData);
     }
 
     @Override
@@ -69,8 +72,9 @@ public class SignUpActivity extends BaseActivity implements HttpListener {
     }
 
     @Override
-    public void onFailure(int failure_code) {
-        ToastUtil.showToast(this, AccountUtil.getAccountFailureMessage(failure_code));
+    public void onFailure(int failure_code, String failure_data) {
+        ToastUtil.showToast(this,
+                AccountUtil.parseErrorMessageWithJSON(failure_data));
     }
 
     /**

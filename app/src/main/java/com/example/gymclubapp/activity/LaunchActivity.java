@@ -19,8 +19,6 @@ public class LaunchActivity extends BaseActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                ServerConfig.ip = "192.168.43.252";
-                ServerConfig.port = "8000";
                 startActivity(new Intent(LaunchActivity.this, SignInActivity.class));
                 ToastUtil.initToast(LaunchActivity.this);
                 LaunchActivity.this.finish();

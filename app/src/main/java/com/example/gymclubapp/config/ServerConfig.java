@@ -1,10 +1,10 @@
 package com.example.gymclubapp.config;
 
 public class ServerConfig {
-    public static String ip = "";
-    public static String port = "";
+    public static final String ip = "192.168.2.170";
+    public static final String port = "8000";
     public static String current_destination = "";
-    public static boolean isSetToOffLine = true;
+    public static boolean isSetToOffLine = false;
 
     public static String getAddress(String destination) {
         current_destination = destination;
@@ -15,7 +15,4 @@ public class ServerConfig {
         return "http://" + ip + ":" + port;
     }
 
-    public static boolean isValid() {
-        return (!ip.isEmpty() && !port.isEmpty());
-    }
 }

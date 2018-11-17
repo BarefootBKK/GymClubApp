@@ -7,6 +7,9 @@ public class Coach {
     private int coachHeadingImg;
     private String coachImageUrl;
 
+    public Coach(){
+    }
+
     public Coach(String coachName, String coachDescription, String studentNum, String coachImageUrl) {
         this.coachName = coachName;
         this.coachDescription = coachDescription;

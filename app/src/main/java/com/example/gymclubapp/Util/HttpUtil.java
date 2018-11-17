@@ -4,10 +4,13 @@ import android.util.Log;
 
 import com.example.gymclubapp.config.HttpConfig;
 import com.example.gymclubapp.config.ServerConfig;
+import com.example.gymclubapp.entity.MyResponse;
 import com.example.gymclubapp.entity.User;
 import com.example.gymclubapp.interfaces.HttpCallbackListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -89,5 +92,16 @@ public class HttpUtil {
                 .url(address)
                 .build();
         return client.newCall(request).execute();
+    }
+
+    public static MyResponse getResponseData(String jsonData) {
+        MyResponse myResponse = new MyResponse(0, "");
+        try {
+            JSONObject jsonObject = new JSONObject(jsonData);
+            myResponse.setCode(jsonObject.getInt("code"));
+            myResponse.setData(jsonObject.getString("data"));
+            Log.d("测试", "getResponseData: " + myResponse.toString());
+        } catch (Exception e) { }
+        return myResponse;
     }
 }

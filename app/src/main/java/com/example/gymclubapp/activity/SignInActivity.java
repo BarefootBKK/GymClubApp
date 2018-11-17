@@ -18,6 +18,9 @@ import com.example.gymclubapp.util.AccountUtil;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.util.ToastUtil;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class SignInActivity extends BaseActivity implements View.OnClickListener, HttpListener{
     private final static String TAG = "SignInActivity";
 
@@ -40,7 +43,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                 if (!ServerConfig.isSetToOffLine) {
                     User user = getUser();
                     int verify_code = AccountUtil.isValid(user);
-                    if (verify_code == 0 && ServerConfig.isValid()) {
+                    if (verify_code == 0) {
                         NetworkTask userTask = new NetworkTask(ServerConfig.getAddress("/login"),
                                 HttpConfig.POST, this);
                         userTask.execute(AccountUtil.getRequestBody(user));
@@ -67,7 +70,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onMessage(String jsonData) {
-
+        ToastUtil.showToast(this, jsonData);
     }
 
     @Override
@@ -78,9 +81,9 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     }
 
     @Override
-    public void onFailure(int failure_code) {
+    public void onFailure(int failure_code, String failure_data) {
         ToastUtil.showToast(SignInActivity.this,
-                AccountUtil.getAccountFailureMessage(failure_code));
+                AccountUtil.parseErrorMessageWithJSON(failure_data));
     }
 
     private User getUser() {
@@ -88,4 +91,5 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
         String password = ((EditText)findViewById(R.id.signInEditPassword)).getText().toString();
         return new User(username, password);
     }
+
 }

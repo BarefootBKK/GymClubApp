@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.example.gymclubapp.config.ErrorCodeConfig;
 import com.example.gymclubapp.config.HttpConfig;
+import com.example.gymclubapp.config.ServerConfig;
 import com.example.gymclubapp.interfaces.HttpListener;
 import com.example.gymclubapp.util.HttpUtil;
 
@@ -12,12 +13,11 @@ import java.io.IOException;
 
 import okhttp3.RequestBody;
 
-public class NetworkTask extends AsyncTask<RequestBody, Integer, Integer> {
+public class NetworkTask extends AsyncTask<RequestBody, Integer, MyResponse> {
 
     private HttpListener listener;
     private String address;
     private int method;
-    private String jsonData;
 
     public NetworkTask(String address, int method, HttpListener listener) {
         this.address = address;
@@ -31,12 +31,12 @@ public class NetworkTask extends AsyncTask<RequestBody, Integer, Integer> {
     }
 
     @Override
-    protected void onPostExecute(Integer code) {
-        if (code == 0) {
-            listener.onMessage(jsonData);
+    protected void onPostExecute(MyResponse response) {
+        if (response.getCode() == 200) {
+            listener.onMessage(response.getData());
             listener.onSuccess();
         } else {
-            listener.onFailure(code);
+            listener.onFailure(response.getCode(), response.getData());
         }
     }
 
@@ -46,23 +46,26 @@ public class NetworkTask extends AsyncTask<RequestBody, Integer, Integer> {
     }
 
     @Override
-    protected Integer doInBackground(RequestBody... requestBodies) {
+    protected MyResponse doInBackground(RequestBody... requestBodies) {
         try {
-            Log.d("测试", "doInBackground: ");
-            String response;
+            String jsonData;
             if (method == HttpConfig.POST) {
-                response = HttpUtil.sendOkHttpRequestByPOST(address, requestBodies[0], method).body().string();
+                jsonData = HttpUtil.sendOkHttpRequestByPOST(address, requestBodies[0], method).body().string();
             } else {
-                response = HttpUtil.sendOkHttpRequestByGET(address).body().string();
+                jsonData = HttpUtil.sendOkHttpRequestByGET(address).body().string();
             }
-            if (response.isEmpty()) {
-                return ErrorCodeConfig.NET_DATA_LOSS;
+            Log.d("测试", "doInBackground: " + jsonData);
+            if (jsonData.isEmpty()) {
+                return new MyResponse(202, getErrorMessage("数据传输出错！"));
             } else {
-                jsonData = response;
-                return 0;
+                return HttpUtil.getResponseData(jsonData);
             }
         } catch (IOException e) {
-            return ErrorCodeConfig.SERVER_UNAVAILABLE;
+            return new MyResponse(101, getErrorMessage("无法连接服务器！" + ServerConfig.getAddress()));
         }
+    }
+
+    private String getErrorMessage(String error_msg) {
+        return "{\"error_msg\": \"" + error_msg +"\"}";
     }
 }

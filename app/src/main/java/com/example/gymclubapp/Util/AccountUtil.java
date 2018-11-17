@@ -4,6 +4,9 @@ import com.example.gymclubapp.config.ErrorCodeConfig;
 import com.example.gymclubapp.config.ServerConfig;
 import com.example.gymclubapp.entity.User;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import okhttp3.FormBody;
 import okhttp3.RequestBody;
 
@@ -49,10 +52,27 @@ public class AccountUtil {
     }
 
     public static RequestBody getRequestBody(User user) {
-        RequestBody requestBody = new FormBody.Builder()
-                .add(user.request_username, user.getUsername())
-                .add(user.request_password, user.getPassword())
-                .build();
+        RequestBody requestBody;
+        if (user.getPasswordConfirmation().isEmpty()) {
+            requestBody = new FormBody.Builder()
+                    .add(user.request_username, user.getUsername())
+                    .add(user.request_password, user.getPassword())
+                    .build();
+        } else {
+            requestBody = new FormBody.Builder()
+                    .add(user.request_username, user.getUsername())
+                    .add(user.request_password, user.getPassword())
+                    .add(user.request_password_cfm, user.getPasswordConfirmation())
+                    .build();
+        }
         return requestBody;
+    }
+
+    public static String parseErrorMessageWithJSON(String error_msg) {
+        String msg = "未知错误！";
+        try {
+            msg = new JSONObject(error_msg).getString("error_msg");
+        } catch (JSONException e) {}
+        return msg;
     }
 }

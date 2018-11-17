@@ -3,6 +3,7 @@ package com.example.gymclubapp.entity;
 public class User {
     public final String request_username = "username";
     public final String request_password = "password";
+    public final String request_password_cfm = "password_cfm";
 
     private String username;
     private String password;
