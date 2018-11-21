@@ -10,6 +10,7 @@ import com.example.gymclubapp.interfaces.HttpListener;
 import com.example.gymclubapp.util.HttpUtil;
 
 import java.io.IOException;
+import java.net.SocketTimeoutException;
 
 import okhttp3.RequestBody;
 
@@ -60,8 +61,11 @@ public class NetworkTask extends AsyncTask<RequestBody, Integer, MyResponse> {
             } else {
                 return HttpUtil.getResponseData(jsonData);
             }
-        } catch (IOException e) {
-            return new MyResponse(101, getErrorMessage("无法连接服务器！" + ServerConfig.getAddress()));
+        } catch (SocketTimeoutException e) {
+            return new MyResponse(101, "无法连接服务器：" + ServerConfig.getAddress());
+        }
+        catch (IOException e) {
+            return new MyResponse(100, getErrorMessage(e.toString()));
         }
     }
 

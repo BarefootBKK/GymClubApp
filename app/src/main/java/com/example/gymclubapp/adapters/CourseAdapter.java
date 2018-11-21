@@ -18,7 +18,8 @@ import com.example.gymclubapp.activity.MainActivity;
 import com.example.gymclubapp.entity.Course;
 import com.example.gymclubapp.entity.CourseContent;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
-import com.example.gymclubapp.util.ReadFromFileUtil;
+import com.example.gymclubapp.util.FileUtil;
+import com.example.gymclubapp.util.FileUtil;
 import com.example.gymclubapp.util.ToastUtil;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
@@ -42,7 +43,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CourseContent courseContent = ReadFromFileUtil.getCourseContent(mContext.getResources()
+                CourseContent courseContent = FileUtil.getCourseContent(mContext.getResources()
                         .openRawResource(R.raw.course_yoga));
                 ActivityFunctionUtil.toStartActivity(mContext, CourseDetailActivity.class,
                         R.drawable.yoga, courseContent.toArray());

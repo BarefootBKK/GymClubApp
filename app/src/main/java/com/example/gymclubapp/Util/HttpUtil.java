@@ -72,10 +72,10 @@ public class HttpUtil {
 
     public static Response sendOkHttpRequestByPOST(String address, RequestBody requestBody, int method) throws IOException{
         OkHttpClient client = new OkHttpClient();
-//        client.newBuilder()
-//                .connectTimeout(100, TimeUnit.MILLISECONDS)
-//                .readTimeout(100, TimeUnit.MILLISECONDS).build();
-        Log.d("测试", "sendOkHttpRequest: " + method + "  " + address);
+        client.newBuilder()
+                .connectTimeout(100, TimeUnit.MILLISECONDS)
+                .readTimeout(100, TimeUnit.MILLISECONDS)
+                .build();
         Request request = new Request.Builder()
                 .url(address)
                 .post(requestBody)
@@ -84,10 +84,10 @@ public class HttpUtil {
     }
 
     public static Response sendOkHttpRequestByGET(String address) throws IOException{
-        OkHttpClient client = new OkHttpClient();
-        client.newBuilder()
-                .connectTimeout(1, TimeUnit.SECONDS)
-                .readTimeout(1, TimeUnit.SECONDS).build();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(100, TimeUnit.MILLISECONDS)
+                .readTimeout(100, TimeUnit.MILLISECONDS)
+                .build();
         Request request = new Request.Builder()
                 .url(address)
                 .build();
@@ -100,7 +100,6 @@ public class HttpUtil {
             JSONObject jsonObject = new JSONObject(jsonData);
             myResponse.setCode(jsonObject.getInt("code"));
             myResponse.setData(jsonObject.getString("data"));
-            Log.d("测试", "getResponseData: " + myResponse.toString());
         } catch (Exception e) { }
         return myResponse;
     }

@@ -18,7 +18,7 @@ import com.example.gymclubapp.activity.VideoDetailActivity;
 import com.example.gymclubapp.entity.Course;
 import com.example.gymclubapp.entity.CourseContent;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
-import com.example.gymclubapp.util.ReadFromFileUtil;
+import com.example.gymclubapp.util.FileUtil;
 
 import java.util.List;
 
