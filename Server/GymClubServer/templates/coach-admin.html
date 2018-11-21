@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            h1,p,input {
+                display: block;
+                margin-top: 4px;
+                margin-bottom: 4px;
+                font-size: 18px;
+            }
+            button {
+                width: 205px;
+                font-size: 20px;
+                height: 30px;
+            }
+            .center {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body class="center">
+        <form method="post" id="form">
+            <b style="font-size: 35px">Coach admin</b>
+            <input name="coach_name" placeholder="教练名字（必填）" value={{ form.coach_name }}>
+            <input name="coach_birthday" placeholder="出生日期（必填）" value={{ form.coach_birthday }}>
+            <input name="coach_intro" placeholder="教练介绍" value={{ form.coach_intro }}>
+            <input name="coach_signature" placeholder="教练的个性签名" value={{ form.coach_signature }}>
+            <input name="coach_title" placeholder="教练职称" value={{ form.coach_title }}>
+            <input name="stu_num" placeholder="学生人数（必填）" value={{ form.stu_num }}>
+            <input name="heading_img" placeholder="教练头像地址" value={{ form.heading_img }}>
+            <input name="other_img" placeholder="更多图片的地址" value={{ form.other_img }}>
+            <input name="have_course" placeholder="教练当前已开课程" value={{ form.have_course }}>
+            <input name="course_type" placeholder="课程主要类型（必填）" value={{ form.course_type }}>
+            <button type="submit" form="form">提交</button>
+            <p style="color: #a41515">{{ result }}</p>
+        </form>
+    </body>
+</html>

@@ -1,9 +1,13 @@
 package com.example.gymclubapp.activity;
 
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,10 +16,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.example.gymclubapp.R;
+import com.example.gymclubapp.adapters.VideoAdapter;
+import com.example.gymclubapp.config.ServerConfig;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.util.ToastUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CourseDetailActivity extends BaseActivity {
 
@@ -49,6 +59,21 @@ public class CourseDetailActivity extends BaseActivity {
                 ToastUtil.showToast(CourseDetailActivity.this, "加入课程成功！");
             }
         });
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add("00");
+        }
+        VideoAdapter videoAdapter = new VideoAdapter(list, R.layout.video_item, this);
+        RecyclerView recyclerView = findViewById(R.id.videoCy);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(videoAdapter);
     }
 
     @Override

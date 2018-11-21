@@ -98,6 +98,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
         </activity>
+
+        <!-- VideoDetailActivity -->
+        <activity android:name=".activity.VideoDetailActivity"
+            android:parentActivityName=".activity.CourseDetailActivity"
+            android:launchMode="singleTask">
+            <!-- 如果要支持android4.0以下的 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.CourseDetailActivity" />
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

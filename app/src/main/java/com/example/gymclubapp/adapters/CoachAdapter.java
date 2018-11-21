@@ -35,7 +35,7 @@ public class CoachAdapter extends RecyclerView.Adapter<CoachAdapter.ViewHolder> 
         Coach coach = coachList.get(position);
         holder.coachName.setText(coach.getCoachName());
         holder.coachDescription.setText(coach.getCoachDescription());
-        holder.studentNum.setText(coach.getStudentNum());
+        holder.studentNum.setText(coach.getStudentNum() + "人");
         Picasso.get().load(coach.getCoachImageUrl()).into(holder.coachImage);
         holder.coachCard.setOnClickListener(new View.OnClickListener() {
             @Override

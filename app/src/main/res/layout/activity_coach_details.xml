@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,333 +17,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/coachDetail_hint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginTop="16dp"
-                android:text="赶快加入报名吧！"
-                android:alpha="0.5"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/coachDetail_horizontalLine_5" />
-
             <View
                 android:id="@+id/coachDetail_horizontalLine_5"
                 android:layout_width="0dp"
                 android:layout_height="0.3dip"
                 android:layout_marginTop="16dp"
                 android:alpha="0.6"
-                android:background="#5a5656"
+                android:background="#cab2b2"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
-
-            <TableLayout
-                android:id="@+id/tableLayout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="@+id/textView8"
-                app:layout_constraintStart_toStartOf="@+id/coachDetail_timeTable_title"
-                app:layout_constraintTop_toBottomOf="@+id/coachDetail_timeTable_title">
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="MON"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="TUE"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="WED"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="THU"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="FRI"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="SAT"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="SUN"
-                        android:textSize="30px" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="8:00"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="14:00"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="11:00"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="17:00"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="9:00"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="16:00"
-                        android:textSize="30px" />
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="wrap_content"
-                        android:text="10:00"
-                        android:textSize="30px" />
-
-                </TableRow>
-
-
-            </TableLayout>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="MON"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="TUE"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="WED"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="THU"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="FRI"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="SAT"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="SUN"
-                    android:textSize="30px" />
-            </TableRow>
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="MON"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="TUE"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="WED"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="THU"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="FRI"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="SAT"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="SUN"
-                android:textSize="30px" />
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="8:00"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="14:00"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="11:00"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="17:00"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="9:00"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="16:00"
-                    android:textSize="30px" />
-
-                <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="wrap_content"
-                    android:text="10:00"
-                    android:textSize="30px" />
-
-            </TableRow>
-
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="8:00"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="14:00"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="11:00"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="17:00"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="9:00"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="16:00"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:text="10:00"
-                android:textSize="30px" />
+                app:layout_constraintTop_toBottomOf="@+id/coachDetail_contact" />
 
             <View
                 android:id="@+id/coachDetail_horizontalLine_4"
@@ -350,7 +34,7 @@
                 android:layout_height="0.3dip"
                 android:layout_marginTop="16dp"
                 android:alpha="0.6"
-                android:background="#5a5656"
+                android:background="#cab2b2"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/coachDetail_principle" />
@@ -361,7 +45,7 @@
                 android:layout_height="0.3dip"
                 android:layout_marginTop="16dp"
                 android:alpha="0.6"
-                android:background="#5a5656"
+                android:background="#cab2b2"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/coachDetail_ownCourse" />
@@ -385,7 +69,7 @@
                 android:layout_height="0.3dip"
                 android:layout_marginTop="8dp"
                 android:alpha="0.6"
-                android:background="#5a5656"
+                android:background="#cab2b2"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/coachDetail_headImage" />
@@ -438,7 +122,7 @@
                 android:layout_height="0.4dip"
                 android:layout_marginTop="16dp"
                 android:alpha="0.6"
-                android:background="#5a5656"
+                android:background="#cab2b2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/coachDetail_signature" />
@@ -538,7 +222,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="教练简介"
-                android:textColor="#302b2b"
+                android:textColor="#756d6d"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/coachDetail_ownCourse"
@@ -555,23 +239,11 @@
                 android:layout_marginTop="12dp"
                 android:background="#f4f6e6"
                 android:padding="4dp"
-                android:text="这里是教练的简介..."
+                android:text="君不见，黄河之水天上来，奔流到海不复回。 君不见，高堂明镜悲白发，朝如青丝暮成雪。 人生得意须尽欢，莫使金樽空对月。 天生我材必有用，千金散尽还复来。 烹羊宰牛且为乐，会须一饮三百杯。 岑夫子，丹丘生，将进酒，杯莫停。 与君歌一曲，请君为我倾耳听。 钟鼓馔玉不足贵，但愿长醉不复醒。 古来圣贤皆寂寞，惟有饮者留其名。 陈王昔时宴平乐，斗酒十千恣欢谑。 主人何为言少钱，径须沽取对君酌。 五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView8"
                 app:layout_constraintStart_toStartOf="@+id/coachDetail_principle_title"
                 app:layout_constraintTop_toBottomOf="@+id/coachDetail_principle_title" />
-
-            <TextView
-                android:id="@+id/coachDetail_timeTable_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="课程时间表"
-                android:textColor="#433737"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/coachDetail_principle_title"
-                app:layout_constraintTop_toBottomOf="@+id/coachDetail_horizontalLine_4" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/coachDetail_toolbar"
@@ -584,7 +256,65 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:popupTheme="@style/Theme.AppCompat.Light"
                 app:subtitleTextAppearance="@style/ToolbarTitleText"
-                app:titleTextColor="#20201f"  />
+                app:titleTextColor="#20201f" />
+
+            <ImageView
+                android:id="@+id/coachDetail_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/coachDetail_contact"
+                app:layout_constraintEnd_toStartOf="@+id/coachDetail_phone"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/coachDetail_contact"
+                app:srcCompat="@drawable/ic_mail" />
+
+            <ImageView
+                android:id="@+id/coachDetail_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/coachDetail_mail"
+                app:layout_constraintEnd_toStartOf="@+id/coachDetail_sms"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/coachDetail_mail"
+                app:layout_constraintTop_toTopOf="@+id/coachDetail_mail"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <TextView
+                android:id="@+id/coachDetail_contact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="联系教练"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coachDetail_horizontalLine_4" />
+
+            <ImageView
+                android:id="@+id/coachDetail_sms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/coachDetail_phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/coachDetail_phone"
+                app:layout_constraintTop_toTopOf="@+id/coachDetail_phone"
+                app:srcCompat="@drawable/ic_sms" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
@@ -596,7 +326,7 @@
         android:layout_height="wrap_content"
         android:alpha="0.7"
         android:background="#efe82d"
-        android:text="开始报名"
+        android:text="订阅"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

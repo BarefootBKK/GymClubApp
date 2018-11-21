@@ -16,15 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <!-- 课程内容 -->
+
             <TextView
                 android:id="@+id/courseContentCourseDetails"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="24dp"
                 android:layout_marginTop="8dp"
+                android:background="#f2f2ec"
                 android:lineSpacingExtra="6dp"
                 android:text="课程内容"
-                android:background="#f2f2ec"
                 android:textColor="#423e3e"
                 android:textSize="15sp"
                 app:layout_constraintLeft_toLeftOf="@+id/courseDetail"
@@ -35,8 +36,8 @@
                 android:id="@+id/courseDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="课程详情"
                 android:textColor="#383636"
@@ -88,8 +89,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dip"
                 android:layout_marginTop="16dp"
-                android:background="#aea0a0"
                 android:alpha="0.5"
+                android:background="#aea0a0"
                 app:layout_constraintTop_toBottomOf="@id/headingCourseDetails" />
             <!-- 训练部位 -->
             <TextView
@@ -118,9 +119,9 @@
                 android:id="@+id/view2CourseDetail"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dip"
-                android:background="#aea0a0"
                 android:layout_marginTop="16dp"
                 android:alpha="0.5"
+                android:background="#aea0a0"
                 app:layout_constraintTop_toBottomOf="@id/positionCourseDetails" />
             <!-- 分割线3 -->
             <View
@@ -130,21 +131,35 @@
                 android:layout_marginTop="16dp"
                 android:alpha="0.3"
                 android:background="#aea0a0"
-                app:layout_constraintTop_toBottomOf="@id/courseContentCourseDetails"/>
+                app:layout_constraintTop_toBottomOf="@id/courseContentCourseDetails" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/videoCy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginTop="16dp"
-                android:alpha="0.6"
-                android:text="(≧∇≦)/"
-                android:textColor="#706161"
-                android:textSize="35sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view3CourseDetail" />
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:text="教学视频"
+                android:textColor="#705e5e"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3CourseDetail" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
@@ -156,7 +171,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#efe82d"
-        android:text="加入课程"
+        android:text="+ 加入课程"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -81,7 +81,7 @@ public class CoachItemSubFragment extends Fragment {
                 coach.setCoachName(jsonObject.getString("coach_name"));
                 coach.setCoachDescription(jsonObject.getString("coach_signature"));
                 coach.setStudentNum(jsonObject.getString("stu_num"));
-                coach.setCoachImageUrl(ServerConfig.getAddress() +
+                coach.setCoachImageUrl(ServerConfig.getAddress("/static") +
                         jsonObject.getString("head_img_url"));
                 coachList.add(coach);
             }
