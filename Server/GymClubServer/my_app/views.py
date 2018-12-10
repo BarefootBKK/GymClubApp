@@ -55,6 +55,13 @@ def coach(request):
         return HttpResponse("This is POST in coach")
 
 
+def course(request):
+    if request.method == "GET":
+        return HttpResponse(Jsons.get_json(200, Jsons.get_course()), content_type=my_content_type)
+    else:
+        return HttpResponse("This is POST in course")
+
+
 def coach_admin(request):
     if request.method == "POST":
         coach_name = request.POST.get("coach_name", None)
@@ -88,10 +95,18 @@ def coach_admin(request):
         return render(request, "coach-admin.html")
 
 
+def video(request):
+    return render(request, "video.html")
+
+
+def test_connect(request):
+    return HttpResponse("connect OK.")
+
+
 def file_iterator(file_name, chunk_size=8192, offset=0, length=None):
     with open(file_name, "rb") as f:
         f.seek(offset, os.SEEK_SET)
-        remaining = length
+        remaining = int(length)
         while True:
             bytes_length = chunk_size if remaining is None else min(remaining, chunk_size)
             data = f.read(bytes_length)
@@ -102,36 +117,38 @@ def file_iterator(file_name, chunk_size=8192, offset=0, length=None):
             yield data
 
 
-def video(request):
-    return render(request, "video.html")
-
-
 def stream_video(request):
-    resp = None
-    try :
-        path = "F:/Python_Projects/Django Projects/GymClubServer/static/videos/demo.mp4"
-        """将视频文件以流媒体的方式响应"""
-        range_header = request.META.get('HTTP_RANGE', '').strip()
-        range_re = re.compile(r'bytes\s*=\s*(\d+)\s*-\s*(\d*)', re.I)
-        range_match = range_re.match(range_header)
-        size = os.path.getsize(path)
-        content_type, encoding = mimetypes.guess_type(path)
-        content_type = content_type or 'application/octet-stream'
-        if range_match:
-            first_byte, last_byte = range_match.groups()
-            first_byte = int(first_byte) if first_byte else 0
-            last_byte = first_byte + 1024 * 1024 * 8       # 8M 每片,响应体最大体积
-            if last_byte >= size:
-                last_byte = size - 1
-            length = last_byte - first_byte + 1
-            resp = StreamingHttpResponse(file_iterator(path, offset=first_byte, length=length),
-                                         status=206, content_type=content_type)
-            resp['Content-Length'] = str(length)
-            resp['Content-Range'] = 'bytes %s-%s/%s' % (first_byte, last_byte, size)
+    """将视频文件以流媒体的方式响应"""
+    path = 'F:/Python_Projects/Django Projects/GymClubServer/static/videos/demo.mp4'
+    range_header = request.META.get('HTTP_RANGE', '').strip()
+    range_re = re.compile(r'bytes\s*=\s*(\d+)\s*-\s*(\d*)', re.I)
+    range_match = range_re.match(range_header)
+    size = os.path.getsize(path)
+    content_type, encoding = mimetypes.guess_type(path)
+    content_type = content_type or 'application/octet-stream'
+    if range_match:
+        first_byte, last_byte = range_match.groups()
+        first_byte = int(first_byte) if first_byte else 0
+        end = -1
+        if len(last_byte) > 0:
+            end = int(last_byte)
+        if end == -1:
+            # 此处的md['size']是文件大小
+            length = str(size - first_byte)
         else:
-            # 不是以视频流方式的获取时，以生成器方式返回整个文件，节省内存
-            resp = StreamingHttpResponse(FileWrapper(open(path, 'rb')), content_type=content_type)
-            resp['Content-Length'] = str(size)
-    finally:
-        resp['Accept-Ranges'] = 'bytes'
-        return resp
+            length = str(end - first_byte + 1)
+        if end < 0:
+            content_range_header_value = "bytes %d-%d/%d" % (first_byte, size - 1, size)
+        else:
+            content_range_header_value = "bytes %d-%d/%d" % (first_byte, end, size)
+        resp = StreamingHttpResponse(file_iterator(path, offset=first_byte, length=length), status=206,
+                                     content_type=content_type)
+        resp['Content-Length'] = length
+        # resp['Content-Range'] = 'bytes %s-%s/%s' % (first_byte, last_byte, size)
+        resp["Content-Range"] = content_range_header_value
+    else:
+        # 不是以视频流方式的获取时，以生成器方式返回整个文件，节省内存
+        resp = StreamingHttpResponse(FileWrapper(open(path, 'rb')), content_type=content_type)
+        resp['Content-Length'] = str(size)
+    resp['Accept-Ranges'] = 'bytes'
+    return resp

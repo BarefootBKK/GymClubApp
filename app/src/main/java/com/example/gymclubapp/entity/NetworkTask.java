@@ -3,8 +3,7 @@ package com.example.gymclubapp.entity;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.gymclubapp.config.ErrorCodeConfig;
-import com.example.gymclubapp.config.HttpConfig;
+import com.example.gymclubapp.config.NetConfig;
 import com.example.gymclubapp.config.ServerConfig;
 import com.example.gymclubapp.interfaces.HttpListener;
 import com.example.gymclubapp.util.HttpUtil;
@@ -34,8 +33,7 @@ public class NetworkTask extends AsyncTask<RequestBody, Integer, MyResponse> {
     @Override
     protected void onPostExecute(MyResponse response) {
         if (response.getCode() == 200) {
-            listener.onMessage(response.getData());
-            listener.onSuccess();
+            listener.onSuccess(response.getData());
         } else {
             listener.onFailure(response.getCode(), response.getData());
         }
@@ -50,8 +48,8 @@ public class NetworkTask extends AsyncTask<RequestBody, Integer, MyResponse> {
     protected MyResponse doInBackground(RequestBody... requestBodies) {
         try {
             String jsonData;
-            if (method == HttpConfig.POST) {
-                jsonData = HttpUtil.sendOkHttpRequestByPOST(address, requestBodies[0], method).body().string();
+            if (method == NetConfig.POST) {
+                jsonData = HttpUtil.sendOkHttpRequestByPOST(address, requestBodies[0]).body().string();
             } else {
                 jsonData = HttpUtil.sendOkHttpRequestByGET(address).body().string();
             }

@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/course_scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scrollbars="none"
@@ -47,7 +48,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view2CourseDetail" />
             <!-- 课程标题 -->
             <TextView
-                android:id="@+id/headingCourseDetails"
+                android:id="@+id/courseNameCourseDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -69,7 +70,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/abdominal_muscle" />
+                app:srcCompat="@drawable/run" />
             <!-- toolbar -->
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbarCourseDetails"
@@ -91,7 +92,7 @@
                 android:layout_marginTop="16dp"
                 android:alpha="0.5"
                 android:background="#aea0a0"
-                app:layout_constraintTop_toBottomOf="@id/headingCourseDetails" />
+                app:layout_constraintTop_toBottomOf="@id/courseNameCourseDetails" />
             <!-- 训练部位 -->
             <TextView
                 android:id="@+id/positionCourseDetails"
@@ -137,7 +138,7 @@
                 android:id="@+id/videoCy"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -153,8 +154,9 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:text="教学视频"
-                android:textColor="#705e5e"
+                android:textColor="#383636"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"

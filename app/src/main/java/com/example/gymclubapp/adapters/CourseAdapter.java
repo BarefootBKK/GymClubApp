@@ -1,6 +1,5 @@
 package com.example.gymclubapp.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
@@ -14,20 +13,15 @@ import android.widget.TextView;
 import java.util.List;
 import com.example.gymclubapp.R;
 import com.example.gymclubapp.activity.CourseDetailActivity;
-import com.example.gymclubapp.activity.MainActivity;
 import com.example.gymclubapp.entity.Course;
-import com.example.gymclubapp.entity.CourseContent;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
-import com.example.gymclubapp.util.FileUtil;
-import com.example.gymclubapp.util.FileUtil;
-import com.example.gymclubapp.util.ToastUtil;
+import com.squareup.picasso.Picasso;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
 
     private List<Course> courseList;
     private int rowLayout;
     private Context mContext;
-    public static Activity activity;
 
     public CourseAdapter(List<Course> courseList, int rowLayout, Context mContext) {
         this.courseList = courseList;
@@ -37,16 +31,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Course course = courseList.get(position);
+        final Course course = courseList.get(position);
         holder.courseText.setText(course.getCourseName());
-        holder.courseImage.setImageResource(course.getImageId());
+        Picasso.get().load(course.getCourseHeadImg()).into(holder.courseImage);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CourseContent courseContent = FileUtil.getCourseContent(mContext.getResources()
-                        .openRawResource(R.raw.course_yoga));
-                ActivityFunctionUtil.toStartActivity(mContext, CourseDetailActivity.class,
-                        R.drawable.yoga, courseContent.toArray());
+                ActivityFunctionUtil.toStartActivityByParcelable(mContext, CourseDetailActivity.class, course);
             }
         });
     }

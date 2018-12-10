@@ -24,9 +24,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^login', views.login),
     url(r'^register', views.register),
+    url(r'^course', views.course),
     url(r'^coach', views.coach),
     url(r'^ca', views.coach_admin),
     url(r'^video', views.video),
-    url(r'^streaming', views.stream_video),
+    url(r'^stream_video', views.stream_video),
+    url(r'^test', views.test_connect),
     url(r'^static/(?P<path>.*)$', my_view.serve),
 ]

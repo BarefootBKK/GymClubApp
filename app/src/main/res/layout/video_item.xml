@@ -52,7 +52,7 @@
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/badminton" />
+                app:srcCompat="@drawable/run" />
 
             <TextView
                 android:id="@+id/train_frequency"

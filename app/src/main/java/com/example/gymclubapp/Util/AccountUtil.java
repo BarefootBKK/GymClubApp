@@ -30,6 +30,11 @@ public class AccountUtil {
         return 0;
     }
 
+    /**
+     * 用于前端密码等字段验证
+     * @param failure_code
+     * @return
+     */
     public static String getAccountFailureMessage(int failure_code) {
         if (failure_code == ErrorCodeConfig.ACC_PASSWORD_NULL) {
             return "账号或密码不能为空！";
@@ -51,6 +56,11 @@ public class AccountUtil {
         return "未知错误！";
     }
 
+    /**
+     * 获取用户请求的Body
+     * @param user
+     * @return
+     */
     public static RequestBody getRequestBody(User user) {
         RequestBody requestBody;
         if (user.getPasswordConfirmation().isEmpty()) {
@@ -68,6 +78,11 @@ public class AccountUtil {
         return requestBody;
     }
 
+    /**
+     * 分析服务器传来的JSON错误信息
+     * @param error_msg
+     * @return
+     */
     public static String parseErrorMessageWithJSON(String error_msg) {
         String msg = "未知错误！";
         try {

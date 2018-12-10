@@ -39,7 +39,7 @@
                     android:id="@+id/my_course_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/yoga" />
+                    android:src="@drawable/run" />
                 <!-- 隔层蒙版 -->
                 <View
                     android:layout_width="match_parent"

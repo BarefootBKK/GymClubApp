@@ -15,7 +15,6 @@ import com.example.gymclubapp.R;
 import com.example.gymclubapp.activity.CoachDetailActivity;
 import com.example.gymclubapp.entity.Coach;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
-import com.example.gymclubapp.util.ToastUtil;
 import com.squareup.picasso.Picasso;
 
 public class CoachAdapter extends RecyclerView.Adapter<CoachAdapter.ViewHolder> {
@@ -32,15 +31,15 @@ public class CoachAdapter extends RecyclerView.Adapter<CoachAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Coach coach = coachList.get(position);
+        final Coach coach = coachList.get(position);
         holder.coachName.setText(coach.getCoachName());
-        holder.coachDescription.setText(coach.getCoachDescription());
+        holder.coachDescription.setText(coach.getCoachSignature());
         holder.studentNum.setText(coach.getStudentNum() + "人");
-        Picasso.get().load(coach.getCoachImageUrl()).into(holder.coachImage);
+        Picasso.get().load(coach.getCoachHeadImg()).into(holder.coachImage);
         holder.coachCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityFunctionUtil.toStartActivity(mContext, CoachDetailActivity.class, -1, "");
+                ActivityFunctionUtil.toStartActivityByParcelable(mContext, CoachDetailActivity.class, coach);
             }
         });
     }

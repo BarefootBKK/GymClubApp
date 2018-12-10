@@ -13,22 +13,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.activity.CourseDetailActivity;
 import com.example.gymclubapp.activity.VideoDetailActivity;
 import com.example.gymclubapp.entity.Course;
-import com.example.gymclubapp.entity.CourseContent;
-import com.example.gymclubapp.util.ActivityFunctionUtil;
-import com.example.gymclubapp.util.FileUtil;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> {
-    private List<String> videoList;
+    private List<Course> videoList;
     private int rowLayout;
     private Context mContext;
     public static Activity activity;
 
-    public VideoAdapter(List<String> videoList, int rowLayout, Context mContext) {
+    public VideoAdapter(List<Course> videoList, int rowLayout, Context mContext) {
         this.videoList = videoList;
         this.rowLayout = rowLayout;
         this.mContext = mContext;
@@ -36,10 +33,10 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String videoUrl = videoList.get(position);
-        holder.videoImg.setImageResource(R.drawable.upper_limb);
-        holder.videoTitle.setText("你好-左");
-        holder.trainFrequency.setText("10次");
+        Course course = videoList.get(position);
+        Picasso.get().load(course.getCourseHeadImg()).into(holder.videoImg);
+        holder.videoTitle.setText(course.getCourseName() + "-" + (position + 1));
+        holder.trainFrequency.setText(position + 5 + "次");
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

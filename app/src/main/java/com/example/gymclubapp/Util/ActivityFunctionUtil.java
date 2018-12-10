@@ -3,14 +3,18 @@ package com.example.gymclubapp.util;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Parcelable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 import com.example.gymclubapp.R;
+import com.example.gymclubapp.config.BasicConfig;
+import com.example.gymclubapp.config.CacheConfig;
 
 public class ActivityFunctionUtil {
 
@@ -95,5 +99,31 @@ public class ActivityFunctionUtil {
         intent.putExtra("extra_data", dataArray);
         intent.putExtra("extra_res", resId);
         context.startActivity(intent);
+    }
+
+    public static void toStartActivityByParcelable(Context context, Class targetClass, Parcelable parcelable) {
+        Intent intent = new Intent(context, targetClass);
+        intent.putExtra(BasicConfig.INTENT_DATA_NAME, parcelable);
+        context.startActivity(intent);
+    }
+
+    public static void saveDataWithSPByBoolean(Context context, String reference_name, String key_name, boolean state) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(reference_name, Context.MODE_PRIVATE).edit();
+        editor.putBoolean("isLogin", state);
+        editor.commit();
+    }
+
+    public static Object getDataWithSP(Context context, String reference_name, String key_name, int type) {
+        SharedPreferences reader = context.getSharedPreferences(reference_name, Context.MODE_PRIVATE);
+        if (type == CacheConfig.SP_BOOLEAN) {
+            return reader.getBoolean(key_name, false);
+        } else if (type == CacheConfig.SP_STRING) {
+            return reader.getString(key_name, null);
+        } else if (type == CacheConfig.SP_INTEGER) {
+            return reader.getInt(key_name, -1);
+        } else if (type == CacheConfig.SP_FLOAT) {
+            return reader.getFloat(key_name, -1);
+        }
+        return null;
     }
 }

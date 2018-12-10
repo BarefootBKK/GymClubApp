@@ -8,14 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.example.gymclubapp.R;
+import com.example.gymclubapp.broadcast.NetBroadcastReceiver;
+import com.example.gymclubapp.config.NetConfig;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.util.ToastUtil;
 
-public class BaseActivity extends AppCompatActivity {
-
+public class BaseActivity extends AppCompatActivity implements NetBroadcastReceiver.NetEvent {
+    public static NetBroadcastReceiver.NetEvent event;
     private String TAG;
 
     @Override
@@ -39,6 +40,11 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 点击事件监听器
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -59,7 +65,7 @@ public class BaseActivity extends AppCompatActivity {
                 break;
             // 更多课程
             case R.id.item_more_course:
-                ActivityFunctionUtil.toStartActivity(this, MoreCourseActivity.class, -1, "");
+                ToastUtil.showToast(this, "还没有哦!");
                 break;
             // 主页
             case android.R.id.home:
@@ -67,12 +73,7 @@ public class BaseActivity extends AppCompatActivity {
                 return true;
             // 相关教练
             case R.id.item_course_detail_relativeCoach:
-                if (((TextView) findViewById(R.id.headingCourseDetails))
-                        .getText().equals("瑜伽塑身")) {
-                    ActivityFunctionUtil.toStartActivity(this, CoachDetailActivity.class, -1, "");
-                } else {
-                    ToastUtil.showToast(this, "找不到诶");
-                }
+                ToastUtil.showToast(this, "找不到诶");
                 break;
             // 获取课程
             case R.id.item_go_get_course:
@@ -112,5 +113,19 @@ public class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy: " + TAG);
+    }
+
+    /**
+     * 网络变化监听器
+     * @param netMobile
+     */
+    @Override
+    public void onNetChange(int netMobile) {
+        NetConfig.CURRENT_NETWORK_TYPE = netMobile;
+        if (netMobile < 0) {
+            NetConfig.isNetConnect = false;
+        } else {
+            NetConfig.isNetConnect = true;
+        }
     }
 }

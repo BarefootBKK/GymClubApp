@@ -6,20 +6,15 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.config.HttpConfig;
+import com.example.gymclubapp.config.CacheConfig;
+import com.example.gymclubapp.config.NetConfig;
 import com.example.gymclubapp.config.ServerConfig;
-import com.example.gymclubapp.controller.ActivityController;
 import com.example.gymclubapp.entity.NetworkTask;
 import com.example.gymclubapp.entity.User;
-import com.example.gymclubapp.entity.NetworkTask;
-import com.example.gymclubapp.interfaces.HttpListener;
 import com.example.gymclubapp.interfaces.HttpListener;
 import com.example.gymclubapp.util.AccountUtil;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.util.ToastUtil;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class SignInActivity extends BaseActivity implements View.OnClickListener, HttpListener{
     private final static String TAG = "SignInActivity";
@@ -40,25 +35,20 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.signInButtonIn:
-                if (!ServerConfig.isSetToOffLine) {
-                    User user = getUser();
-                    int verify_code = AccountUtil.isValid(user);
-                    if (verify_code == 0) {
-                        NetworkTask userTask = new NetworkTask(ServerConfig.getAddress("/login"),
-                                HttpConfig.POST, this);
-                        userTask.execute(AccountUtil.getRequestBody(user));
-                    } else {
-                        if (verify_code != 0) {
-                            ToastUtil.showToast(SignInActivity.this,
-                                    AccountUtil.getAccountFailureMessage(verify_code));
-                        } else {
-                            ToastUtil.showToast(SignInActivity.this, "服务器参数出错");
-                        }
-                    }
+                User user = getUser();
+                int verify_code = AccountUtil.isValid(user);
+                if (verify_code == 0) {
+                    NetworkTask userTask = new NetworkTask(ServerConfig.getAddress("/login"),
+                            NetConfig.POST, this);
+                    userTask.execute(AccountUtil.getRequestBody(user));
                 } else {
-                    onSuccess();
+                    if (verify_code != 0) {
+                        ToastUtil.showToast(SignInActivity.this,
+                                AccountUtil.getAccountFailureMessage(verify_code));
+                    } else {
+                        ToastUtil.showToast(SignInActivity.this, "服务器参数出错");
+                    }
                 }
-
                 break;
             case R.id.signInButtonUp:
                 ActivityFunctionUtil.toStartActivity(this, SignUpActivity.class, -1, "");
@@ -69,14 +59,11 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     }
 
     @Override
-    public void onMessage(String jsonData) {
+    public void onSuccess(String jsonData) {
         ToastUtil.showToast(this, jsonData);
-    }
-
-    @Override
-    public void onSuccess() {
         ActivityFunctionUtil.setIsLogin(true);
         ActivityFunctionUtil.toStartActivity(this, MainActivity.class, -1, "");
+        ActivityFunctionUtil.saveDataWithSPByBoolean(this, CacheConfig.LOGIN_CACHE, CacheConfig.LOGIN_CACHE_KEY, true);
         this.finish();
     }
 

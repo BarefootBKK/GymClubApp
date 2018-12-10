@@ -3,36 +3,25 @@ package com.example.gymclubapp.fragment.subFragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gymclubapp.R;
 import com.example.gymclubapp.adapters.CoachAdapter;
-import com.example.gymclubapp.adapters.CourseAdapter;
-import com.example.gymclubapp.config.HttpConfig;
+import com.example.gymclubapp.config.BasicConfig;
 import com.example.gymclubapp.config.ServerConfig;
 import com.example.gymclubapp.entity.Coach;
-import com.example.gymclubapp.entity.NetworkTask;
-import com.example.gymclubapp.interfaces.HttpListener;
+import com.example.gymclubapp.entity.DatabaseRunnable;
+import com.example.gymclubapp.fragment.CourseContentFragment;
 import com.example.gymclubapp.util.HttpUtil;
-import com.example.gymclubapp.util.ToastUtil;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.litepal.LitePal;
 
-import java.lang.reflect.GenericArrayType;
-import java.util.ArrayList;
 import java.util.List;
 
-public class CoachItemSubFragment extends Fragment {
+public class CoachItemSubFragment extends CourseContentFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -42,52 +31,29 @@ public class CoachItemSubFragment extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-
-        NetworkTask networkTask = new NetworkTask(ServerConfig.getAddress("/coach"), HttpConfig.GET,
-                new HttpListener() {
-                    @Override
-                    public void onMessage(String jsonData) {
-                        CoachAdapter coachAdapter = new CoachAdapter(parseJSONWithGSON(jsonData), R.layout.coach_item, getActivity());
-                        RecyclerView recyclerView = getActivity().findViewById(R.id.coach_ry);
-                        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-                        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                        recyclerView.setLayoutManager(linearLayoutManager);
-                        recyclerView.setAdapter(coachAdapter);
-                    }
-
-                    @Override
-                    public void onSuccess() {
-
-                    }
-
-                    @Override
-                    public void onFailure(int failure_code, String failure_data) {
-                        Log.d("测试", "onFailure: ");
-                    }
-                });
-        networkTask.execute();
-
+        initTrainingListData(R.id.coach_ry, R.id.coach_swipeContainer, R.id.coach_swipe_error_msg);
         super.onActivityCreated(savedInstanceState);
     }
 
-    private List<Coach> parseJSONWithGSON(String jasonData) {
-        Log.d("测试", "parseJSONWithGSON: " + jasonData);
-        List<Coach> coachList = new ArrayList<>();
-        try {
-            JSONArray jsonArray = new JSONArray(jasonData);
-            for (int i = 0; i < jsonArray.length(); i++) {
-                Coach coach = new Coach();
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                coach.setCoachName(jsonObject.getString("coach_name"));
-                coach.setCoachDescription(jsonObject.getString("coach_signature"));
-                coach.setStudentNum(jsonObject.getString("stu_num"));
-                coach.setCoachImageUrl(ServerConfig.getAddress("/static") +
-                        jsonObject.getString("head_img_url"));
-                coachList.add(coach);
-            }
-        } catch (Exception e) {
-            ToastUtil.showToast(getActivity(), "无法解析的json数据!" + jasonData);
+    @Override
+    public void onSuccess(String jsonData) {
+        // 获取解析数据
+        List<Coach> coachList = parseCoachWithJSON(jsonData);
+        // 更新列表
+        super.updateTrainingListData(new CoachAdapter(coachList, R.layout.coach_item, getActivity()));
+        // 保存缓存信息
+        super.saveCacheData(new DatabaseRunnable<>(coachList, BasicConfig.CLASS_COACH));
+    }
+
+    @Override
+    protected void loadData() {
+        if (HttpUtil.isNetConnect(getActivity())) {
+            startNetworkTaskByGET(ServerConfig.getAddress("/coach"));
+        } else {
+            // 读取缓存
+            List<Coach> coachList = LitePal.findAll(Coach.class);
+            RecyclerView.Adapter adapter = new CoachAdapter(coachList, R.layout.coach_item, getActivity());
+            loadCache(adapter);
         }
-        return coachList;
     }
 }

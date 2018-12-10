@@ -37,7 +37,7 @@
                 android:background="#cab2b2"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/coachDetail_principle" />
+                app:layout_constraintTop_toBottomOf="@+id/coachDetail_intro" />
 
             <View
                 android:id="@+id/coachDetail_horizontalLine_3"
@@ -48,7 +48,7 @@
                 android:background="#cab2b2"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/coachDetail_ownCourse" />
+                app:layout_constraintTop_toBottomOf="@+id/coachDetail_studentNum_title" />
 
             <TextView
                 android:id="@+id/coachDetail_courseType_title"
@@ -114,7 +114,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/yoga" />
+                app:srcCompat="@drawable/fruit" />
 
             <View
                 android:id="@+id/coachDetail_horizontalLine_1"
@@ -134,7 +134,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/coach_elizabeth"
+                android:src="@drawable/fruit"
                 app:layout_constraintBottom_toBottomOf="@+id/coachDetail_poster"
                 app:layout_constraintDimensionRatio="w,1:1"
                 app:layout_constraintStart_toStartOf="parent"
@@ -145,6 +145,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="8dp"
                 app:cardBackgroundColor="#c0d11a"
                 app:cardCornerRadius="4dp"
@@ -158,7 +160,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/coachDetail_status"
+                        android:id="@+id/coachDetail_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -201,11 +203,25 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/coachDetail_courseType_title"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/coachDetail_courseType_title"
                 app:layout_constraintTop_toBottomOf="@+id/coachDetail_courseType_title" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/coachDetail_studentNum_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="学生人数"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/coachDetail_ownCourse"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/coachDetail_ownCourse"
+                app:layout_constraintTop_toBottomOf="@+id/coachDetail_ownCourse" />
+
+            <TextView
+                android:id="@+id/coachDetail_haveCourse"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="瑜伽塑身  舒缓放松  跑步热身"
@@ -229,7 +245,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/coachDetail_horizontalLine_3" />
 
             <TextView
-                android:id="@+id/coachDetail_principle"
+                android:id="@+id/coachDetail_intro"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -241,7 +257,7 @@
                 android:padding="4dp"
                 android:text="君不见，黄河之水天上来，奔流到海不复回。 君不见，高堂明镜悲白发，朝如青丝暮成雪。 人生得意须尽欢，莫使金樽空对月。 天生我材必有用，千金散尽还复来。 烹羊宰牛且为乐，会须一饮三百杯。 岑夫子，丹丘生，将进酒，杯莫停。 与君歌一曲，请君为我倾耳听。 钟鼓馔玉不足贵，但愿长醉不复醒。 古来圣贤皆寂寞，惟有饮者留其名。 陈王昔时宴平乐，斗酒十千恣欢谑。 主人何为言少钱，径须沽取对君酌。 五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。"
                 android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/textView8"
+                app:layout_constraintEnd_toEndOf="@+id/coachDetail_haveCourse"
                 app:layout_constraintStart_toStartOf="@+id/coachDetail_principle_title"
                 app:layout_constraintTop_toBottomOf="@+id/coachDetail_principle_title" />
 
@@ -262,10 +278,10 @@
                 android:id="@+id/coachDetail_mail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="32dp"
                 app:layout_constraintBottom_toBottomOf="@id/coachDetail_contact"
                 app:layout_constraintEnd_toStartOf="@+id/coachDetail_phone"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -279,10 +295,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginBottom="2dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/coachDetail_mail"
                 app:layout_constraintEnd_toStartOf="@+id/coachDetail_sms"
@@ -307,14 +323,24 @@
                 android:id="@+id/coachDetail_sms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/coachDetail_phone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/coachDetail_phone"
                 app:layout_constraintTop_toTopOf="@+id/coachDetail_phone"
                 app:srcCompat="@drawable/ic_sms" />
+
+            <TextView
+                android:id="@+id/coachDetail_studentNum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/coachDetail_studentNum_title"
+                app:layout_constraintEnd_toEndOf="@+id/coachDetail_haveCourse"
+                app:layout_constraintStart_toStartOf="@+id/coachDetail_haveCourse"
+                app:layout_constraintTop_toTopOf="@+id/coachDetail_studentNum_title" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

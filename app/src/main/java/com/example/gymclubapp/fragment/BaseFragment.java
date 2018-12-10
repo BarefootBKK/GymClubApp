@@ -7,22 +7,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gymclubapp.R;
-import com.example.gymclubapp.activity.MoreCourseActivity;
 import com.example.gymclubapp.activity.SignInActivity;
 import com.example.gymclubapp.activity.TrainingRecordActivity;
-import com.example.gymclubapp.controller.ActivityController;
+import com.example.gymclubapp.config.CacheConfig;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.activity.MainActivity;
-import com.example.gymclubapp.activity.SearchActivity;
 import com.example.gymclubapp.activity.TempActivity;
 
-public class BaseFragment extends Fragment implements View.OnClickListener{
-
+public class BaseFragment extends Fragment implements View.OnClickListener {
     protected int toolbarId;
     protected int menuId;
     private MainActivity mainActivity;
@@ -47,6 +43,11 @@ public class BaseFragment extends Fragment implements View.OnClickListener{
         super.onActivityCreated(savedInstanceState);
     }
 
+    /**
+     * 初始化toolbar的选项菜单
+     * @param menu
+     * @param inflater
+     */
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         Log.d("CourseContentFragment", "onCreateOptionsMenu: ");
@@ -56,6 +57,10 @@ public class BaseFragment extends Fragment implements View.OnClickListener{
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    /**
+     * 点击事件
+     * @param v
+     */
     @Override
     public void onClick(View v) {
 
@@ -81,8 +86,11 @@ public class BaseFragment extends Fragment implements View.OnClickListener{
                         R.drawable.fruit, "我的头像");
                 break;
             case R.id.userLogout:
+                // 退出登录
                 ActivityFunctionUtil.toStartActivity(mainActivity, SignInActivity.class,
                         -1, "");
+                ActivityFunctionUtil.saveDataWithSPByBoolean(mainActivity,
+                        CacheConfig.LOGIN_CACHE, CacheConfig.LOGIN_CACHE_KEY, false);
                 mainActivity.finish();
                 break;
             default:
