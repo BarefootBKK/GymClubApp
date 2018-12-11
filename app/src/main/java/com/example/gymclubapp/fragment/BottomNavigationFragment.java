@@ -1,6 +1,7 @@
 package com.example.gymclubapp.fragment;
 
 import android.os.Bundle;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.view.*;
@@ -36,6 +37,7 @@ public class BottomNavigationFragment extends Fragment {
 
             switch (item.getItemId()) {
                 case R.id.navigation_training:
+
                     mainActivity.getMyFragmentController().showFragment(0, false);
                     return true;
                 case R.id.navigation_course:

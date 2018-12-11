@@ -1,6 +1,11 @@
 package com.example.gymclubapp.entity;
 
-public class Profile {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import org.litepal.crud.LitePalSupport;
+
+public class Profile extends LitePalSupport implements Parcelable {
     private String username;
     private String nickname;
     private String fansNum;
@@ -8,9 +13,49 @@ public class Profile {
     private String likedNum;
     private String headImageUrl;
 
+    public Profile() {
+
+    }
+
     public Profile(String username) {
         this.username = username;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(username);
+        dest.writeString(nickname);
+        dest.writeString(fansNum);
+        dest.writeString(subscribeNum);
+        dest.writeString(likedNum);
+        dest.writeString(headImageUrl);
+    }
+
+    public static final Parcelable.Creator<Profile> CREATOR = new Parcelable.Creator<Profile>() {
+        @Override
+        public Profile createFromParcel(Parcel source) {
+            Profile profile = new Profile();
+            profile.username = source.readString();
+            profile.nickname = source.readString();
+            profile.fansNum = source.readString();
+            profile.subscribeNum = source.readString();
+            profile.likedNum = source.readString();
+            profile.headImageUrl = source.readString();
+            return profile;
+        }
+
+        @Override
+        public Profile[] newArray(int size) {
+            return new Profile[size];
+        }
+    };
+
+
 
     public String getUsername() {
         return username;

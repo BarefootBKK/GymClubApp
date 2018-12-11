@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import org.litepal.crud.LitePalSupport;
 
-public class Coach extends LitePalSupport implements Parcelable{
+public class Coach extends LitePalSupport implements Parcelable {
     private String coachName;       // 教练名字
     private String coachBirthday;   // 教练生日
     private String coachIntro;      // 教练介绍
@@ -17,6 +17,16 @@ public class Coach extends LitePalSupport implements Parcelable{
     private String coachCourseType; // 教练的主要课程类型
     private String studentNum;      // 教练的学生人数
     private int coachHeadingImg;    // 支持显示的本地资源图片文件id
+
+    public Coach(){
+    }
+
+    public Coach(String coachName, String coachSignature, String coachHeadImg, String studentNum) {
+        this.coachName = coachName;
+        this.coachSignature = coachSignature;
+        this.coachHeadImg = coachHeadImg;
+        this.studentNum = studentNum;
+    }
 
     @Override
     public int describeContents() {
@@ -61,16 +71,6 @@ public class Coach extends LitePalSupport implements Parcelable{
             return new Coach[size];
         }
     };
-
-    public Coach(){
-    }
-
-    public Coach(String coachName, String coachSignature, String coachHeadImg, String studentNum) {
-        this.coachName = coachName;
-        this.coachSignature = coachSignature;
-        this.coachHeadImg = coachHeadImg;
-        this.studentNum = studentNum;
-    }
 
     public String getCoachName() {
         return coachName;

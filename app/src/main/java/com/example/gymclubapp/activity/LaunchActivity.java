@@ -7,9 +7,14 @@ import android.os.Handler;
 import com.example.gymclubapp.R;
 import com.example.gymclubapp.config.CacheConfig;
 import com.example.gymclubapp.config.NetConfig;
+import com.example.gymclubapp.entity.Profile;
 import com.example.gymclubapp.util.ActivityFunctionUtil;
 import com.example.gymclubapp.util.HttpUtil;
 import com.example.gymclubapp.util.ToastUtil;
+
+import org.litepal.LitePal;
+
+import java.util.List;
 
 public class LaunchActivity extends BaseActivity {
     @Override
@@ -33,7 +38,15 @@ public class LaunchActivity extends BaseActivity {
                 Boolean isLogin = (Boolean) ActivityFunctionUtil.getDataWithSP(LaunchActivity.this,
                         CacheConfig.LOGIN_CACHE, CacheConfig.LOGIN_CACHE_KEY, CacheConfig.SP_BOOLEAN);
                 if (isLogin) {
-                    startActivity(new Intent(LaunchActivity.this, MainActivity.class));
+                    List<Profile> profileList = LitePal.findAll(Profile.class);
+                    int profileCount = profileList.size();
+                    if (profileCount > 0) {
+                        ActivityFunctionUtil.toStartActivityByParcelable(
+                                LaunchActivity.this, MainActivity.class, profileList.get(profileCount - 1));
+                    } else {
+                        startActivity(new Intent(LaunchActivity.this, SignInActivity.class));
+                        ToastUtil.showToast(LaunchActivity.this, "登录信息已过时，请重新登录!");
+                    }
                 } else {
                     startActivity(new Intent(LaunchActivity.this, SignInActivity.class));
                 }

@@ -6,5 +6,6 @@
     <list>
         <mapping class="com.example.gymclubapp.entity.Course"></mapping>
         <mapping class="com.example.gymclubapp.entity.Coach"></mapping>
+        <mapping class="com.example.gymclubapp.entity.Profile"></mapping>
     </list>
 </litepal>

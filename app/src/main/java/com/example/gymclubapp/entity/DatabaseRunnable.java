@@ -8,8 +8,14 @@ import java.util.List;
 
 public class DatabaseRunnable<T> implements Runnable {
 
+    private T data;
     private List<T> dataList;
     private int classType;
+
+    public DatabaseRunnable(T data, int classType) {
+        this.data = data;
+        this.classType = classType;
+    }
 
     public DatabaseRunnable(List<T> dataList, int classType) {
         this.dataList = dataList;
@@ -25,6 +31,8 @@ public class DatabaseRunnable<T> implements Runnable {
                     saveCoachData();
                 } else if (classType == BasicConfig.CLASS_COURSE) {
                     saveCourseData();
+                } else if (classType == BasicConfig.CLASS_PROFILE) {
+                    saveProfileData();
                 }
                 BasicConfig.isDatabaseLocked = false;
                 break;
@@ -46,5 +54,10 @@ public class DatabaseRunnable<T> implements Runnable {
         for (Course course : courseList) {
             course.save();
         }
+    }
+
+    private void saveProfileData() {
+        Profile profile = (Profile) this.data;
+        profile.save();
     }
 }

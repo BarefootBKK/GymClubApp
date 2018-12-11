@@ -13,18 +13,17 @@
         android:id="@+id/scrollViewSignIn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scrollbars="none"
         android:orientation="vertical"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/innerConstraintLayoutSignIn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imageView_loginIcon"
@@ -99,9 +98,9 @@
                 android:layout_marginTop="32dp"
                 android:background="@drawable/shape_button"
                 android:text="登 录"
+                android:textColor="#3d3939"
                 android:textSize="19dp"
                 android:textStyle="bold"
-                android:textColor="#3d3939"
                 app:layout_constraintEnd_toEndOf="@+id/signInEditPassword"
                 app:layout_constraintStart_toStartOf="@+id/signInTextPassword"
                 app:layout_constraintTop_toBottomOf="@+id/signInEditPassword" />
@@ -111,17 +110,104 @@
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_button"
                 android:text="注 册"
                 android:textColor="#3d3939"
                 android:textSize="19dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/signInButtonIn"
                 app:layout_constraintStart_toStartOf="@+id/signInButtonIn"
                 app:layout_constraintTop_toBottomOf="@+id/signInButtonIn" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="0.1dip"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
+                android:background="#9f9696"
+                app:layout_constraintBottom_toBottomOf="@+id/signIn_otherLogin"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/signIn_otherLogin"
+                app:layout_constraintTop_toTopOf="@+id/signIn_otherLogin" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="0.1dip"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="4dp"
+                android:background="#9f9696"
+                app:layout_constraintBottom_toBottomOf="@+id/signIn_otherLogin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/signIn_otherLogin"
+                app:layout_constraintTop_toTopOf="@+id/signIn_otherLogin" />
+
+            <TextView
+                android:id="@+id/signIn_otherLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="第三方登录"
+                app:layout_constraintBottom_toTopOf="@+id/signIn_qq"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/view" />
+
+            <ImageView
+                android:id="@+id/signIn_qq"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/signIn_weibo"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signInButtonUp"
+                app:srcCompat="@drawable/ic_qq2" />
+
+            <ImageView
+                android:id="@+id/signIn_weibo"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/signIn_qq"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/signIn_qq"
+                app:layout_constraintTop_toTopOf="@+id/signIn_qq"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_weibo2" />
+
+            <TextView
+                android:id="@+id/signIn_loadingHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="#948f8f"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signIn_qq" />
 
         </android.support.constraint.ConstraintLayout>
 

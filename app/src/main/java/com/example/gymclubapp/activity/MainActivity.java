@@ -5,8 +5,10 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 
 import com.example.gymclubapp.R;
+import com.example.gymclubapp.config.BasicConfig;
 import com.example.gymclubapp.controller.MyFragmentController;
 import com.example.gymclubapp.controller.TabViewPagerController;
+import com.example.gymclubapp.entity.Profile;
 import com.example.gymclubapp.fragment.subFragment.CoachItemSubFragment;
 import com.example.gymclubapp.fragment.subFragment.CourseItemSubFragment;
 import com.example.gymclubapp.fragment.subFragment.TrainingDietSubFragment;
@@ -19,11 +21,15 @@ public class MainActivity extends BaseActivity {
 
     private MyFragmentController myFragmentController;
     private final int defaultFragmentIndex = 0;
+    public static Profile profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 读取用户信息
+        profile = getIntent().getParcelableExtra(BasicConfig.INTENT_DATA_NAME);
+        // 初始化数据
         this.initFragment();
         this.initTabLayout();
     }

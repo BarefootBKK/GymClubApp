@@ -10,6 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- QQ Login Code Start-->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 这地方需要用你在开放平台申请的appid:tencent+appid -->
+                <data android:scheme="tencent1107957445" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- End of QQ Login Code -->
+
         <!-- LaunchActivity -->
         <activity android:name=".activity.LaunchActivity"
             android:launchMode="singleTask">
@@ -74,10 +94,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
         </activity>
-
-        <!-- MoreCourseActivity -->
-        <activity android:name=".activity.MoreCourseActivity"
-            android:launchMode="singleTask"/>
 
         <!-- TrainingRecordActivity -->
         <activity android:name=".activity.TrainingRecordActivity"
