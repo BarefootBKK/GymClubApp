@@ -24,7 +24,7 @@ import okhttp3.Response;
 
 public class HttpUtil {
 
-    public static Response sendOkHttpRequestByPOST(String address, RequestBody requestBody) throws IOException{
+    public static Response sendOkHttpRequestByPOST(String address, RequestBody requestBody) throws IOException {
         OkHttpClient client = new OkHttpClient();
         client.newBuilder()
                 .connectTimeout(1000, TimeUnit.MILLISECONDS)
@@ -37,7 +37,7 @@ public class HttpUtil {
         return client.newCall(request).execute();
     }
 
-    public static Response sendOkHttpRequestByGET(String address) throws IOException{
+    public static Response sendOkHttpRequestByGET(String address) throws IOException {
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(1000, TimeUnit.MILLISECONDS)
                 .readTimeout(1000, TimeUnit.MILLISECONDS)

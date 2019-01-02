@@ -1,6 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+        }
+        release {
+            keyAlias 'first'
+            keyPassword '090442'
+            storeFile file('C:/Users/Lenovo/Desktop/ first.jks')
+            storePassword '090442'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.gymclubapp"
@@ -22,6 +32,10 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    lintOptions {
+        disable 'GoogleAppIndexingWarning'
+        baseline file("lint-baseline.xml")
+    }
 }
 
 dependencies {
@@ -41,4 +55,5 @@ dependencies {
     implementation 'org.litepal.android:java:3.0.0'
     implementation files('libs/open_sdk_r6008_lite.jar')
     implementation 'com.sina.weibo.sdk:core:2.0.3:openDefaultRelease@aar'
+    implementation files('libs/BaiduLBS_Android.jar')
 }

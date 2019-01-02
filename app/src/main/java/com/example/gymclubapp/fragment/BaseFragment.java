@@ -26,12 +26,6 @@ public class BaseFragment extends Fragment implements View.OnClickListener {
     private MainActivity mainActivity;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_course, container, false);
-    }
-
-    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         // 重载布局
         setHasOptionsMenu(true);

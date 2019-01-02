@@ -60,7 +60,6 @@ public class ActivityFunctionUtil {
      * 设置为沉浸式状态栏
      */
     public void setStatusBar(Activity activity) {
-
         boolean useThemeStatusBarColor = false;
         boolean useStatusBarColor = true;
 

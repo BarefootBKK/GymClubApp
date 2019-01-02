@@ -37,7 +37,6 @@ public class BottomNavigationFragment extends Fragment {
 
             switch (item.getItemId()) {
                 case R.id.navigation_training:
-
                     mainActivity.getMyFragmentController().showFragment(0, false);
                     return true;
                 case R.id.navigation_course:
